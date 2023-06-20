@@ -91,8 +91,7 @@ class MainActivity: ComponentActivity() {
     private fun configStripe() {
         PaymentConfiguration.init(
             applicationContext,
-            "pk_live_51LWUO5SACQklfQRYTPym8Fac0yQb87gR79X9aWkNucFBA78VuKEUpYvUF4yQpGoXPPqQI4y6k5CMZx4ett3xjdO000HqBFDA10"
-            //"pk_test_51LWUO5SACQklfQRYruy9W29tWhUQ1gjBpke7xQEH6uoZ7Q1CcGlSzQyPBl6u9aMY4yWqlQJLXgMCbVCgszADY9VV00o6ORtDAr"
+            "pk_test_51LWUO5SACQklfQRYruy9W29tWhUQ1gjBpke7xQEH6uoZ7Q1CcGlSzQyPBl6u9aMY4yWqlQJLXgMCbVCgszADY9VV00o6ORtDAr"
         )
     }
 
