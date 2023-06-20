@@ -13,18 +13,17 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import coil.compose.AsyncImage
-import com.example.caravan.common.components.MyButton
+import com.example.common.components.MyButton
 import com.example.caravan.domain.model.SavedCartOrder
 import com.example.caravan.domain.navigation.Screens
-import com.example.caravan.theme.Montserrat
-import com.example.caravan.theme.PinkRed
-import com.example.caravan.theme.Typography
+import com.example.common.theme.Montserrat
+import com.example.common.theme.PinkRed
+import com.example.common.theme.Typography
 import com.example.caravan.ui.buyer.BuyerViewModel
 import com.example.caravan.ui.errors.NoNetScreen
 import com.stripe.android.payments.paymentlauncher.PaymentLauncher
@@ -80,13 +79,13 @@ fun CartScreen(
         TopAppBar(
             elevation = 2.dp,
             modifier = Modifier.fillMaxWidth(),
-            backgroundColor = PinkRed
+            backgroundColor = com.example.common.theme.PinkRed
         ) {
             Spacer(modifier = Modifier.padding(8.dp))
 
             Text(
                 text = "caravan",
-                style = Typography.h1,
+                style = com.example.common.theme.Typography.h1,
                 textAlign = TextAlign.Start,
                 color = Color.White
             )
@@ -120,7 +119,7 @@ fun CartScreen(
                         .fillMaxWidth()
                         .weight(1f)
                 ) {
-                    MyButton(text = "Buy Now") {
+                    com.example.common.components.MyButton(text = "Buy Now") {
                         navController?.navigate(Screens.HomeBuyer.route)
                         viewModel.buyCartOrders(paymentLauncher)
                     }
@@ -162,7 +161,7 @@ fun CartOrderItem(item: SavedCartOrder) {
             Text(
                 text = item.name,
                 style = TextStyle(
-                    fontFamily = Montserrat,
+                    fontFamily = com.example.common.theme.Montserrat,
                     fontWeight = FontWeight.Medium,
                     fontSize = 16.sp
                 ),
@@ -172,14 +171,14 @@ fun CartOrderItem(item: SavedCartOrder) {
             Row(Modifier.fillMaxWidth()) {
 
                 val pStyle = TextStyle(
-                    fontFamily = Montserrat,
+                    fontFamily = com.example.common.theme.Montserrat,
                     fontWeight = FontWeight.Medium,
                     fontSize = 14.sp,
-                    color = PinkRed
+                    color = com.example.common.theme.PinkRed
                 )
 
                 val bStyle = TextStyle(
-                    fontFamily = Montserrat,
+                    fontFamily = com.example.common.theme.Montserrat,
                     fontWeight = FontWeight.Bold,
                     fontSize = 14.sp,
                     color = Color.Black

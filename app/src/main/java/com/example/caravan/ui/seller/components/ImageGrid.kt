@@ -20,7 +20,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
-import com.example.caravan.theme.PinkRed
+import com.example.common.theme.PinkRed
 import com.example.caravan.ui.seller.SellerViewModel
 
 @RequiresApi(Build.VERSION_CODES.O)
@@ -57,7 +57,7 @@ fun ImageCard(x: MutableState<String>, viewModel: SellerViewModel, cn: ContentRe
 
     Card(
         shape = RoundedCornerShape(15.dp),
-        border = BorderStroke(2.dp, PinkRed),
+        border = BorderStroke(2.dp, com.example.common.theme.PinkRed),
         modifier = Modifier
             .padding(4.dp)
             .size(80.dp)

@@ -1,16 +1,14 @@
 package com.example.caravan.ui.signup
 
 import android.util.Log
-import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
-import androidx.compose.ui.platform.LocalUriHandler
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.navigation.NavHostController
 import com.example.caravan.R
 import com.example.caravan.data.repository.AccountService
 import com.example.caravan.common.ext.*
-import com.example.caravan.common.snackbar.SnackbarManager
+import com.example.common.snackbar.SnackbarManager
 import com.example.caravan.domain.model.Buyer
 import com.example.caravan.domain.model.CardEntity
 import com.example.caravan.domain.model.Rep
@@ -20,6 +18,8 @@ import com.example.caravan.domain.use_cases.PostNewBuyerUseCase
 import com.example.caravan.domain.use_cases.PostNewRepUseCase
 import com.example.caravan.domain.use_cases.PostNewSellerUseCase
 import com.example.caravan.domain.use_cases.SaveCardUseCase
+import com.example.common.ext.isValidEmail
+import com.example.common.ext.isValidPassword
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
@@ -101,42 +101,42 @@ class SignUpViewModel @Inject constructor(
             !isBuyerDataValid && !isSellerDataValid && !isRepDataValid
         ) {
 
-            SnackbarManager.showMessage(AppText.empty_data)
+            com.example.common.snackbar.SnackbarManager.showMessage(AppText.empty_data)
             return
         }
 
         if (!email.value.isValidEmail()) {
-            SnackbarManager.showMessage(AppText.email_error)
+            com.example.common.snackbar.SnackbarManager.showMessage(AppText.email_error)
             return
         }
 
         if (!password.value.isValidPassword()) {
-            SnackbarManager.showMessage(AppText.password_error)
+            com.example.common.snackbar.SnackbarManager.showMessage(AppText.password_error)
             return
         }
 
         if (!isCardValid && i == 1) {
-            SnackbarManager.showMessage(AppText.card_error)
+            com.example.common.snackbar.SnackbarManager.showMessage(AppText.card_error)
             return
         }
 
         if (!isNumNum) {
-            SnackbarManager.showMessage(R.string.incorrect_data)
+            com.example.common.snackbar.SnackbarManager.showMessage(R.string.incorrect_data)
             return
         }
 
-        viewModelScope.launch(showErrorExceptionHandler) {
+        viewModelScope.launch(com.example.common.ext.showErrorExceptionHandler) {
             accountService.createAccount(email.value, password.value) { error ->
                 if (error == null) {
                     linkWithEmail(navController)
-                } else onError(error)
+                } else com.example.common.ext.onError(error)
                 Log.d("FIREBASETEST", error?.message.toString())
             }
         }
     }
 
     private fun linkWithEmail(navController: NavHostController) {
-        viewModelScope.launch(showErrorExceptionHandler) {
+        viewModelScope.launch(com.example.common.ext.showErrorExceptionHandler) {
 
             accountService.linkAccount(email.value, password.value) { error ->
                 viewModelScope.launch {
@@ -205,7 +205,7 @@ class SignUpViewModel @Inject constructor(
 
                     }.await()
 
-                    SnackbarManager.showMessage(AppText.account_created)
+                    com.example.common.snackbar.SnackbarManager.showMessage(AppText.account_created)
 
                     navController.navigate(Screens.Main.passItem("x")) {
                         launchSingleTop = true

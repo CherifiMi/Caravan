@@ -18,8 +18,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
-import com.example.caravan.theme.PinkRed
-import com.example.caravan.theme.Typography
+import com.example.common.theme.PinkRed
+import com.example.common.theme.Typography
 import kotlinx.coroutines.delay
 
 @Composable
@@ -33,7 +33,7 @@ fun NoNetScreen() {
 
 @Composable
 fun LoadingAnimation2(
-    circleColor: Color = PinkRed,
+    circleColor: Color = com.example.common.theme.PinkRed,
     animationDelay: Int = 1500
 ) {
 

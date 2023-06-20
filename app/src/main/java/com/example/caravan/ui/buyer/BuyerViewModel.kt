@@ -6,23 +6,18 @@ import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.caravan.MainViewModel
 import com.example.caravan.R
-import com.example.caravan.common.snackbar.SnackbarManager
-import com.example.caravan.data.repository.AccountService
+import com.example.common.snackbar.SnackbarManager
 import com.example.caravan.data.repository.CaravanRepository
 import com.example.caravan.data.util.Result
 import com.example.caravan.domain.model.*
-import com.example.caravan.domain.navigation.Screens
 import com.example.caravan.domain.use_cases.GetProductByIdUseCase
 import com.example.caravan.domain.use_cases.GetProductsUseCase
 import com.example.caravan.domain.use_cases.MakeOrderUseCase
-import com.example.makeitso.common.snackbar.SnackbarMessage
 import com.google.gson.Gson
 import com.stripe.android.model.ConfirmPaymentIntentParams
 import com.stripe.android.model.PaymentMethodCreateParams
 import com.stripe.android.payments.paymentlauncher.PaymentLauncher
-import com.stripe.android.payments.paymentlauncher.PaymentResult
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
@@ -250,7 +245,7 @@ class BuyerViewModel @Inject constructor(
 
         //is empty
         if (s.isNullOrEmpty()) {
-            SnackbarManager.showMessage(R.string.invalid_amount)
+            com.example.common.snackbar.SnackbarManager.showMessage(R.string.invalid_amount)
             return false
         }
 
@@ -259,24 +254,24 @@ class BuyerViewModel @Inject constructor(
             try {
                 s.toInt()
             } catch (e: Exception) {
-                SnackbarManager.showMessage(R.string.invalid_amount)
+                com.example.common.snackbar.SnackbarManager.showMessage(R.string.invalid_amount)
                 return false
             }
         }
 
         //lower then min amount
         if (s.toInt() < min) {
-            SnackbarManager.showMessage(R.string.less_then_min)
+            com.example.common.snackbar.SnackbarManager.showMessage(R.string.less_then_min)
             return false
         }
 
         //have in inv
         if (s.toInt() > inv) {
-            SnackbarManager.showMessage(R.string.low_inv)
+            com.example.common.snackbar.SnackbarManager.showMessage(R.string.low_inv)
             return false
         }
 
-        SnackbarManager.showMessage(com.stripe.android.R.string.done)
+        com.example.common.snackbar.SnackbarManager.showMessage(com.stripe.android.R.string.done)
         return true
     }
 }

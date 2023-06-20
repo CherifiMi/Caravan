@@ -14,11 +14,11 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import com.example.caravan.R
-import com.example.caravan.common.components.MyButton
+import com.example.common.components.MyButton
 import com.example.caravan.ui.signup.components.UserCard
-import com.example.caravan.theme.LightGrey
-import com.example.caravan.theme.PinkRed
-import com.example.caravan.theme.Typography
+import com.example.common.theme.LightGrey
+import com.example.common.theme.PinkRed
+import com.example.common.theme.Typography
 import com.example.caravan.ui.signup.SignUpViewModel
 import com.example.caravan.domain.navigation.Screens
 
@@ -44,7 +44,7 @@ fun SelectUserScreen(
                 Text(
                     modifier = Modifier.fillMaxWidth(),
                     text = "caravan",
-                    style = Typography.h1,
+                    style = com.example.common.theme.Typography.h1,
                     color = Color.White
                 )
             })
@@ -54,7 +54,7 @@ fun SelectUserScreen(
                 modifier = Modifier.padding(vertical = 32.dp),
                 text = "Join as a buyer, a seller\n" +
                         "or a representative",
-                style = Typography.h6,
+                style = com.example.common.theme.Typography.h6,
                 textAlign = TextAlign.Center
             )
 
@@ -87,18 +87,16 @@ fun SelectUserScreen(
                 .wrapContentHeight(),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            MyButton(
+            com.example.common.components.MyButton(
                 text = "Apply as a ${
-                    when (viewModel.selected_type.value) 
-                    {
+                    when (viewModel.selected_type.value) {
                         1 -> "Buyer"
                         2 -> "Seller"
                         else -> "Representative"
                     }
                 }"
             ) {
-                when (viewModel.selected_type.value)
-                {
+                when (viewModel.selected_type.value) {
                     1 -> navController.navigate(Screens.InfoBuyer.route)
                     2 -> navController.navigate(Screens.InfoSeller.route)
                     else -> navController.navigate(Screens.InfoRep.route)
@@ -107,8 +105,8 @@ fun SelectUserScreen(
             Row(Modifier.padding(top = 8.dp)) {
                 Text(
                     text = "Do you have an account?",
-                    color = LightGrey,
-                    style = Typography.h3
+                    color = com.example.common.theme.LightGrey,
+                    style = com.example.common.theme.Typography.h3
                 )
                 Text(
                     modifier = Modifier
@@ -116,8 +114,8 @@ fun SelectUserScreen(
                             navController.navigate(Screens.Login.route)
                         },
                     text = "Login",
-                    color = PinkRed,
-                    style = Typography.h3
+                    color = com.example.common.theme.PinkRed,
+                    style = com.example.common.theme.Typography.h3
                 )
             }
             Spacer(modifier = Modifier.height(64.dp))

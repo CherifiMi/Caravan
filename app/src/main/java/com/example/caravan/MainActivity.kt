@@ -24,10 +24,10 @@ import com.amplifyframework.AmplifyException
 import com.amplifyframework.auth.cognito.AWSCognitoAuthPlugin
 import com.amplifyframework.core.Amplify
 import com.amplifyframework.storage.s3.AWSS3StoragePlugin
-import com.example.caravan.common.snackbar.SnackbarManager
+import com.example.common.snackbar.SnackbarManager
 import com.example.caravan.domain.ConnectivityObserver
 import com.example.caravan.domain.NetworkConnectivityObserver
-import com.example.caravan.theme.CaravanTheme
+import com.example.common.theme.CaravanTheme
 import com.example.caravan.ui.buyer.BuyerViewModel
 import com.stripe.android.PaymentConfiguration
 import com.stripe.android.payments.paymentlauncher.PaymentLauncher
@@ -77,7 +77,7 @@ class MainActivity: ComponentActivity() {
 
             Log.d("MitoNet", netStatus.name)
             buyerViewModel = hiltViewModel()
-            CaravanTheme {
+            com.example.common.theme.CaravanTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
@@ -117,11 +117,11 @@ class MainActivity: ComponentActivity() {
                 buyerViewModel.makeOrder()
             }
             is PaymentResult.Canceled -> {
-                SnackbarManager.showMessage(R.string.no_pay)
+                com.example.common.snackbar.SnackbarManager.showMessage(R.string.no_pay)
             }
             is PaymentResult.Failed -> {
                 "Failed: " + paymentResult.throwable.message
-                SnackbarManager.showMessage(R.string.no_pay)
+                com.example.common.snackbar.SnackbarManager.showMessage(R.string.no_pay)
             }
         }
     }

@@ -16,9 +16,9 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.caravan.theme.Montserrat
-import com.example.caravan.theme.PinkRed
-import com.example.caravan.theme.Typography
+import com.example.common.theme.Montserrat
+import com.example.common.theme.PinkRed
+import com.example.common.theme.Typography
 
 @Composable
 fun MyUserRepItem(name: String, brand: String, function: () -> Unit) {
@@ -37,7 +37,7 @@ fun MyUserRepItem(name: String, brand: String, function: () -> Unit) {
         Card(
             modifier = Modifier.size(64.dp),
             shape = RoundedCornerShape(100.dp),
-            backgroundColor = PinkRed
+            backgroundColor = com.example.common.theme.PinkRed
         ) {
             Box(
                 modifier = Modifier.fillMaxSize(),
@@ -45,7 +45,7 @@ fun MyUserRepItem(name: String, brand: String, function: () -> Unit) {
             ) {
                 Text(
                     text = firstChars,
-                    style = Typography.h1,
+                    style = com.example.common.theme.Typography.h1,
                     color = Color.White
                 )
             }
@@ -64,7 +64,7 @@ fun MyUserRepItem(name: String, brand: String, function: () -> Unit) {
             Text(
                 text = brand,
                 style = TextStyle(
-                    fontFamily = Montserrat,
+                    fontFamily = com.example.common.theme.Montserrat,
                     fontWeight = FontWeight.Medium,
                     fontSize = 16.sp,
                 )
@@ -73,7 +73,7 @@ fun MyUserRepItem(name: String, brand: String, function: () -> Unit) {
             Text(
                 text = name,
                 style = TextStyle(
-                    fontFamily = Montserrat,
+                    fontFamily = com.example.common.theme.Montserrat,
                     fontWeight = FontWeight.Normal,
                     fontSize = 11.sp,
                 )

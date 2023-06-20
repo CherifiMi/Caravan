@@ -15,9 +15,9 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.example.caravan.R
-import com.example.caravan.theme.LightGrey
-import com.example.caravan.theme.PinkRed
-import com.example.caravan.theme.Typography
+import com.example.common.theme.LightGrey
+import com.example.common.theme.PinkRed
+import com.example.common.theme.Typography
 import com.example.caravan.ui.signup.SignUpViewModel
 
 @Composable
@@ -32,7 +32,7 @@ fun UserCard(painterResource: Painter, s: String, i: Int, state: MutableState<In
             .padding(horizontal = 16.dp)
             .padding(bottom = 16.dp)
             .border(
-                color = if (selected) PinkRed else LightGrey,
+                color = if (selected) com.example.common.theme.PinkRed else com.example.common.theme.LightGrey,
                 shape = RoundedCornerShape(6.dp),
                 width = 2.dp
             )
@@ -54,7 +54,7 @@ fun UserCard(painterResource: Painter, s: String, i: Int, state: MutableState<In
                 painter = painterResource,
                 contentDescription = null
             )
-            Text(text = s, style = Typography.h3, textAlign = TextAlign.Center)
+            Text(text = s, style = com.example.common.theme.Typography.h3, textAlign = TextAlign.Center)
             Spacer(modifier = Modifier.height(16.dp))
         }
     }

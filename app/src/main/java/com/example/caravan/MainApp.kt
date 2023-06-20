@@ -1,5 +1,6 @@
 package com.example.caravan
 
+import android.annotation.SuppressLint
 import android.content.ContentResolver
 import android.content.res.Resources
 import android.os.Build
@@ -19,14 +20,15 @@ import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ExperimentalMotionApi
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
-import com.example.caravan.common.CaravanAppState
-import com.example.caravan.common.snackbar.SnackbarManager
+import com.example.common.CaravanAppState
+import com.example.common.snackbar.SnackbarManager
 import com.example.caravan.domain.navigation.Navigation
 import com.stripe.android.payments.paymentlauncher.PaymentLauncher
 import kotlinx.coroutines.CoroutineScope
 
-lateinit var gAppState: CaravanAppState
+lateinit var gAppState: com.example.common.CaravanAppState
 
+@SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @RequiresApi(Build.VERSION_CODES.O)
 @ExperimentalMotionApi
 @ExperimentalMaterialApi
@@ -64,7 +66,6 @@ fun MainApp(
     ){
         navController = rememberNavController()
         Navigation(navController, viewModel, cn, paymentLauncher, userId)
-
     }
 }
 
@@ -72,11 +73,17 @@ fun MainApp(
 fun rememberAppState(
     scaffoldState: ScaffoldState = rememberScaffoldState(),
     navController: NavHostController = rememberNavController(),
-    snackbarManager: SnackbarManager = SnackbarManager,
+    snackbarManager: com.example.common.snackbar.SnackbarManager = com.example.common.snackbar.SnackbarManager,
     resources: Resources = resources(),
     coroutineScope: CoroutineScope = rememberCoroutineScope()
 ) = remember(scaffoldState, navController, snackbarManager, resources, coroutineScope) {
-    CaravanAppState(scaffoldState, navController, snackbarManager, resources, coroutineScope)
+    com.example.common.CaravanAppState(
+        scaffoldState,
+        navController,
+        snackbarManager,
+        resources,
+        coroutineScope
+    )
 }
 
 @Composable

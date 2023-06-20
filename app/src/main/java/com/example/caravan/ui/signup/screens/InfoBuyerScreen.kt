@@ -11,10 +11,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
-import com.example.caravan.common.components.MyButton
-import com.example.caravan.common.components.MyTextField
+import com.example.common.components.MyButton
+import com.example.common.components.MyTextField
 import com.example.caravan.ui.signup.SignUpViewModel
-import com.example.caravan.theme.Typography
+import com.example.common.theme.Typography
 
 @Composable
 fun InfoBuyerScreen(
@@ -28,7 +28,7 @@ fun InfoBuyerScreen(
             Text(
                 modifier = Modifier.fillMaxWidth(),
                 text = "caravan",
-                style = Typography.h1,
+                style = com.example.common.theme.Typography.h1,
                 color = Color.White
             )
         })
@@ -38,11 +38,19 @@ fun InfoBuyerScreen(
             Text(
                 modifier = Modifier.padding(16.dp),
                 text = "Create Buyer Account",
-                style = Typography.h1
+                style = com.example.common.theme.Typography.h1
             )
 
-            MyTextField(state = viewModel.email, s = "Email", isEM = true)
-            MyTextField(state = viewModel.password, s = "Password", isPW = true)
+            com.example.common.components.MyTextField(
+                state = viewModel.email,
+                s = "Email",
+                isEM = true
+            )
+            com.example.common.components.MyTextField(
+                state = viewModel.password,
+                s = "Password",
+                isPW = true
+            )
 
             Spacer(modifier = Modifier.height(16.dp))
 
@@ -50,21 +58,37 @@ fun InfoBuyerScreen(
             Text(
                 modifier = Modifier.padding(16.dp),
                 text = "Payment Info",
-                style = Typography.h1
+                style = com.example.common.theme.Typography.h1
             )
 
-            MyTextField(state = viewModel.chn, s = "Card Holder Name")
-            MyTextField(state = viewModel.num, s = "Card Number", isNum = true)
+            com.example.common.components.MyTextField(state = viewModel.chn, s = "Card Holder Name")
+            com.example.common.components.MyTextField(
+                state = viewModel.num,
+                s = "Card Number",
+                isNum = true
+            )
 
             Row(Modifier.fillMaxWidth()) {
                 Box(modifier = Modifier.weight(2f)) {
-                    MyTextField(state = viewModel.cvc, s = "CVC", isNum = true)
+                    com.example.common.components.MyTextField(
+                        state = viewModel.cvc,
+                        s = "CVC",
+                        isNum = true
+                    )
                 }
                 Box(modifier = Modifier.weight(1f)) {
-                    MyTextField(state = viewModel.exM, s = "MM", isNum = true)
+                    com.example.common.components.MyTextField(
+                        state = viewModel.exM,
+                        s = "MM",
+                        isNum = true
+                    )
                 }
                 Box(modifier = Modifier.weight(1f)) {
-                    MyTextField(state = viewModel.exY, s = "YY", isNum = true)
+                    com.example.common.components.MyTextField(
+                        state = viewModel.exY,
+                        s = "YY",
+                        isNum = true
+                    )
                 }
             }
 
@@ -75,19 +99,29 @@ fun InfoBuyerScreen(
             Text(
                 modifier = Modifier.padding(16.dp),
                 text = "Personal Information",
-                style = Typography.h1
+                style = com.example.common.theme.Typography.h1
             )
 
-            MyTextField(state = viewModel.first_name, s = "First Name")
-            MyTextField(state = viewModel.last_name, s = "Last Name")
-            MyTextField(state = viewModel.brand_name, s = "Brand Name")
-            MyTextField(state = viewModel.address, s = "Address")
-            MyTextField(state = viewModel.phone, s = "Phone Number", isNum = true)
+            com.example.common.components.MyTextField(
+                state = viewModel.first_name,
+                s = "First Name"
+            )
+            com.example.common.components.MyTextField(state = viewModel.last_name, s = "Last Name")
+            com.example.common.components.MyTextField(
+                state = viewModel.brand_name,
+                s = "Brand Name"
+            )
+            com.example.common.components.MyTextField(state = viewModel.address, s = "Address")
+            com.example.common.components.MyTextField(
+                state = viewModel.phone,
+                s = "Phone Number",
+                isNum = true
+            )
 
 
             Spacer(modifier = Modifier.height(32.dp))
-            
-            MyButton(text = "Create my account") {
+
+            com.example.common.components.MyButton(text = "Create my account") {
                 viewModel.CreateNewUser(1, navController)
             }
             

@@ -10,10 +10,8 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.navigation.NavHostController
-import com.example.caravan.MainViewModel
 import com.example.caravan.R
-import com.example.caravan.common.snackbar.SnackbarManager
-import com.example.caravan.data.repository.AccountService
+import com.example.common.snackbar.SnackbarManager
 import com.example.caravan.data.repository.CaravanRepository
 import com.example.caravan.data.util.Result
 import com.example.caravan.domain.model.*
@@ -215,17 +213,17 @@ class SellerViewModel @Inject constructor(
         val isFPbiggerSP = fPrice.value >= sPrice.value
 
         if (!allFieldsAreFull) {
-            SnackbarManager.showMessage(R.string.empty_data)
+            com.example.common.snackbar.SnackbarManager.showMessage(R.string.empty_data)
             return
         }
 
         if (!isFPbiggerSP) {
-            SnackbarManager.showMessage(R.string.FpSp)
+            com.example.common.snackbar.SnackbarManager.showMessage(R.string.FpSp)
             return
         }
 
         if (!isNumNum) {
-            SnackbarManager.showMessage(R.string.incorrect_data)
+            com.example.common.snackbar.SnackbarManager.showMessage(R.string.incorrect_data)
             return
         }
 
@@ -248,7 +246,7 @@ class SellerViewModel @Inject constructor(
             Log.d(tag, x.toString())
         }
 
-        SnackbarManager.showMessage(R.string.product_created)
+        com.example.common.snackbar.SnackbarManager.showMessage(R.string.product_created)
 
         getSellerProducts(sellerId)
 
@@ -268,14 +266,14 @@ class SellerViewModel @Inject constructor(
         if (
             !allFieldsAreFull
         ) {
-            SnackbarManager.showMessage(R.string.empty_data)
+            com.example.common.snackbar.SnackbarManager.showMessage(R.string.empty_data)
             return
         }
 
         val isFPbiggerSP = fPrice.value >= sPrice.value
 
         if (!isFPbiggerSP) {
-            SnackbarManager.showMessage(R.string.FpSp)
+            com.example.common.snackbar.SnackbarManager.showMessage(R.string.FpSp)
             return
         }
 
@@ -299,7 +297,7 @@ class SellerViewModel @Inject constructor(
             Log.d(tag, x.toString())
         }
 
-        SnackbarManager.showMessage(R.string.product_updated)
+        com.example.common.snackbar.SnackbarManager.showMessage(R.string.product_updated)
 
         getSellerProducts(sellerId)
 
@@ -351,7 +349,7 @@ class SellerViewModel @Inject constructor(
 
         viewModelScope.launch(Dispatchers.IO) {
             deleteThisProductUseCase(Id(id = id.value))
-            SnackbarManager.showMessage(R.string.product_deleted)
+            com.example.common.snackbar.SnackbarManager.showMessage(R.string.product_deleted)
         }
 
         navController?.popBackStack()

@@ -18,9 +18,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.unit.dp
 import com.example.caravan.domain.model.Cat
-import com.example.caravan.theme.LightGrey
-import com.example.caravan.theme.PinkRed
-import com.example.caravan.theme.Typography
+import com.example.common.theme.LightGrey
+import com.example.common.theme.PinkRed
+import com.example.common.theme.Typography
 import com.example.caravan.ui.seller.SellerViewModel
 
 @RequiresApi(Build.VERSION_CODES.O)
@@ -33,7 +33,7 @@ fun CatsPicker(viewModel: SellerViewModel) {
         Text(
             modifier = Modifier.padding(16.dp),
             text = "Categories",
-            style = Typography.h1
+            style = com.example.common.theme.Typography.h1
         )
 
 
@@ -51,7 +51,7 @@ fun CatItem(i: Cat, viewModel: SellerViewModel) {
     Text(
         modifier = Modifier.padding(start = 16.dp),
         text = i.name,
-        style = Typography.h3
+        style = com.example.common.theme.Typography.h3
     )
 
     LazyRow(){
@@ -93,12 +93,12 @@ fun SubCatCard(item: String, viewModel: SellerViewModel) {
 
                 Log.d(viewModel.tag, viewModel.cats.toString())
             },
-        border = BorderStroke(2.dp, if (isSelected.value) PinkRed else LightGrey)
+        border = BorderStroke(2.dp, if (isSelected.value) com.example.common.theme.PinkRed else com.example.common.theme.LightGrey)
     ) {
         Text(
             modifier = Modifier.padding(16.dp, 8.dp),
             text = item,
-            style = Typography.h4
+            style = com.example.common.theme.Typography.h4
         )
     }
 

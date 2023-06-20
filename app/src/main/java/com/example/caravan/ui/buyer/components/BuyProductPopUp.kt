@@ -23,14 +23,14 @@ import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
-import com.example.caravan.common.components.MyButton
-import com.example.caravan.common.components.MyTextField
+import com.example.common.components.MyButton
+import com.example.common.components.MyTextField
 import com.example.caravan.domain.model.Product
 import com.example.caravan.domain.navigation.Screens
-import com.example.caravan.theme.LightGrey
-import com.example.caravan.theme.Montserrat
-import com.example.caravan.theme.PinkRed
-import com.example.caravan.theme.Typography
+import com.example.common.theme.LightGrey
+import com.example.common.theme.Montserrat
+import com.example.common.theme.PinkRed
+import com.example.common.theme.Typography
 import com.example.caravan.ui.buyer.BuyerViewModel
 import com.stripe.android.payments.paymentlauncher.PaymentLauncher
 
@@ -91,7 +91,7 @@ fun BuyProductPopUp(
 
                     Column(Modifier.fillMaxWidth()) {
 
-                        Text(text = "available: ${currantItem.amountInInv}", style = Typography.h2 , color = Color.Black, modifier = Modifier.padding(start = 16.dp))
+                        Text(text = "available: ${currantItem.amountInInv}", style = com.example.common.theme.Typography.h2 , color = Color.Black, modifier = Modifier.padding(start = 16.dp))
 
                         Row(
                             Modifier.fillMaxWidth(),
@@ -100,13 +100,13 @@ fun BuyProductPopUp(
 
                             Spacer(modifier = Modifier.padding(8.dp))
 
-                            Text(text = "RS ", style = Typography.h3, color = Color.Black)
+                            Text(text = "RS ", style = com.example.common.theme.Typography.h3, color = Color.Black)
                             Text(
                                 text = (currantItem.newPrice).toString(),
-                                style = Typography.h1,
-                                color = PinkRed
+                                style = com.example.common.theme.Typography.h1,
+                                color = com.example.common.theme.PinkRed
                             )
-                            Text(text = " X ", style = Typography.h1, color = LightGrey)
+                            Text(text = " X ", style = com.example.common.theme.Typography.h1, color = com.example.common.theme.LightGrey)
 
                             Spacer(modifier = Modifier.padding(8.dp))
 
@@ -116,7 +116,7 @@ fun BuyProductPopUp(
                                     .padding(end = 32.dp)
                             ) {
 
-                                MyTextField(
+                                com.example.common.components.MyTextField(
                                     state = viewModel.amountToBuy,
                                     s = "Select Amount",
                                     isNum = true
@@ -135,9 +135,9 @@ fun BuyProductPopUp(
 
                             Text(
                                 text = "SR ",
-                                color = PinkRed,
+                                color = com.example.common.theme.PinkRed,
                                 style = TextStyle(
-                                    fontFamily = Montserrat,
+                                    fontFamily = com.example.common.theme.Montserrat,
                                     fontWeight = FontWeight.SemiBold,
                                     fontSize = 18.sp
                                 )
@@ -145,7 +145,7 @@ fun BuyProductPopUp(
                             Text(
                                 text = ((currantItem.newPrice) * if (viewModel.amountToBuy.value.isEmpty()) 0 else viewModel.amountToBuy.value.toInt()).toString(),
                                 style = TextStyle(
-                                    fontFamily = Montserrat,
+                                    fontFamily = com.example.common.theme.Montserrat,
                                     fontWeight = FontWeight.SemiBold,
                                     fontSize = 24.sp
                                 )
@@ -160,10 +160,10 @@ fun BuyProductPopUp(
                     //buy add to cart button
                     Row(Modifier.fillMaxWidth()) {
                         Box(modifier = Modifier.weight(1f)) {
-                            MyButton(
+                            com.example.common.components.MyButton(
                                 text = "Buy Now \n",
                                 text_color = Color.White,
-                                btn_color = PinkRed,
+                                btn_color = com.example.common.theme.PinkRed,
                                 end = 8.dp
                             ) {
                                 if (viewModel.isAmountValid(
@@ -189,11 +189,11 @@ fun BuyProductPopUp(
 
                         Box(modifier = Modifier.weight(1f)) {
 
-                            MyButton(
+                            com.example.common.components.MyButton(
                                 text = "Add to Order Book",
                                 has_border = true,
                                 btn_color = Color.White,
-                                text_color = PinkRed,
+                                text_color = com.example.common.theme.PinkRed,
                                 start = 8.dp
                             ) {
                                 if (viewModel.isAmountValid(

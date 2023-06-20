@@ -19,7 +19,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import com.example.caravan.domain.model.BottomNavItem
-import com.example.caravan.theme.Typography
+import com.example.common.theme.Typography
 import kotlinx.coroutines.selects.select
 
 @Composable
@@ -42,7 +42,7 @@ fun BottomNavigationBar(
                 icon = {
                     Column(horizontalAlignment = CenterHorizontally) {
                         Icon(modifier = Modifier.size(25.dp ),painter = item.icon, contentDescription = null)
-                        Text(text = item.name, textAlign = TextAlign.Center, style = Typography.h4)
+                        Text(text = item.name, textAlign = TextAlign.Center, style = com.example.common.theme.Typography.h4)
                     }
                 }
             )

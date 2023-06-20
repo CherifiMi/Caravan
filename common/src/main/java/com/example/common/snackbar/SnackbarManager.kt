@@ -14,7 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
  */
 
-package com.example.caravan.common.snackbar
+package com.example.common.snackbar
 
 import androidx.annotation.StringRes
 import com.example.makeitso.common.snackbar.SnackbarMessage

@@ -1,9 +1,8 @@
-package com.example.caravan.common.ext
+package com.example.common.ext
 
-import android.util.Log
 import android.util.Patterns
 import com.example.caravan.R
-import com.example.caravan.common.snackbar.SnackbarManager
+import com.example.common.snackbar.SnackbarManager
 import kotlinx.coroutines.CoroutineExceptionHandler
 import java.util.regex.Pattern
 

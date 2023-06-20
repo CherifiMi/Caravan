@@ -1,10 +1,10 @@
-package com.example.caravan.common
+package com.example.common
 
 import android.content.res.Resources
 import androidx.compose.material.ScaffoldState
 import androidx.compose.runtime.Stable
 import androidx.navigation.NavHostController
-import com.example.caravan.common.snackbar.SnackbarManager
+import com.example.common.snackbar.SnackbarManager
 import com.example.makeitso.common.snackbar.SnackbarMessage.Companion.toMessage
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.filterNotNull

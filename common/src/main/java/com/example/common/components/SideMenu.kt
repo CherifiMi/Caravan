@@ -1,4 +1,4 @@
-package com.example.caravan.common.components
+package com.example.common.components
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize

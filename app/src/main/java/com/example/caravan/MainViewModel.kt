@@ -1,19 +1,9 @@
 package com.example.caravan
 
-import android.app.Activity
-import android.app.Application
-import android.content.Context
-import android.net.Uri
 import android.util.Log
-import androidx.browser.customtabs.CustomTabsIntent
-import androidx.compose.material.DrawerState
-import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
-import androidx.compose.ui.platform.LocalUriHandler
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
 import androidx.navigation.NavHostController
-import com.example.caravan.common.CaravanAppState
 import com.example.caravan.data.repository.AccountService
 import com.example.caravan.data.repository.CaravanRepository
 import com.example.caravan.data.util.Result
@@ -25,9 +15,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
 import kotlinx.coroutines.flow.*
-import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
-import java.lang.ref.WeakReference
 import javax.inject.Inject
 
 @HiltViewModel

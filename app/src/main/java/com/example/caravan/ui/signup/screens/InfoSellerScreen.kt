@@ -1,7 +1,5 @@
 package com.example.caravan.ui.signup.screens
 
-import android.content.Intent
-import android.net.Uri
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.*
@@ -20,13 +18,12 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.toSize
-import androidx.core.content.ContextCompat.startActivity
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
-import com.example.caravan.common.components.MyButton
-import com.example.caravan.common.components.MyTextField
+import com.example.common.components.MyButton
+import com.example.common.components.MyTextField
 import com.example.caravan.ui.signup.SignUpViewModel
-import com.example.caravan.theme.Typography
+import com.example.common.theme.Typography
 
 @Composable
 fun InfoSellerScreen(
@@ -40,7 +37,7 @@ fun InfoSellerScreen(
             Text(
                 modifier = Modifier.fillMaxWidth(),
                 text = "caravan",
-                style = Typography.h1,
+                style = com.example.common.theme.Typography.h1,
                 color = Color.White
             )
         })
@@ -51,30 +48,48 @@ fun InfoSellerScreen(
             Text(
                 modifier = Modifier.padding(16.dp),
                 text = "Create Seller Account",
-                style = Typography.h1
+                style = com.example.common.theme.Typography.h1
             )
 
-            MyTextField(state = viewModel.email, s = "Email", isEM = true)
-            MyTextField(state = viewModel.password, s = "Password", isPW = true)
+            com.example.common.components.MyTextField(
+                state = viewModel.email,
+                s = "Email",
+                isEM = true
+            )
+            com.example.common.components.MyTextField(
+                state = viewModel.password,
+                s = "Password",
+                isPW = true
+            )
 
             Spacer(modifier = Modifier.height(16.dp))
 
             Text(
                 modifier = Modifier.padding(16.dp),
                 text = "Personal Information",
-                style = Typography.h1
+                style = com.example.common.theme.Typography.h1
             )
 
-            MyTextField(state = viewModel.first_name, s = "First Name")
-            MyTextField(state = viewModel.last_name, s = "Last Name")
-            MyTextField(state = viewModel.brand_name, s = "Brand Name")
+            com.example.common.components.MyTextField(
+                state = viewModel.first_name,
+                s = "First Name"
+            )
+            com.example.common.components.MyTextField(state = viewModel.last_name, s = "Last Name")
+            com.example.common.components.MyTextField(
+                state = viewModel.brand_name,
+                s = "Brand Name"
+            )
             SelletTypeSelecter(viewModel)
-            MyTextField(state = viewModel.phone, s = "Phone Number", isNum = true)
+            com.example.common.components.MyTextField(
+                state = viewModel.phone,
+                s = "Phone Number",
+                isNum = true
+            )
 
 
             Spacer(modifier = Modifier.height(32.dp))
 
-            MyButton(text = "Create my account") {
+            com.example.common.components.MyButton(text = "Create my account") {
                 viewModel.CreateNewUser(2, navController)
             }
 
@@ -113,7 +128,7 @@ fun SelletTypeSelecter(viewModel: SignUpViewModel) {
 
         OutlinedTextField(
             enabled = false,
-            textStyle = Typography.h3,
+            textStyle = com.example.common.theme.Typography.h3,
             value = viewModel.selectedText.value,
             onValueChange = {
                 viewModel.selectedText.value = it
@@ -164,7 +179,7 @@ fun SelletTypeSelecter(viewModel: SignUpViewModel) {
                 DropdownMenuItem(onClick = {
                     viewModel.selectedText.value = label
                 }) {
-                    Text(text = label, style = Typography.h3)
+                    Text(text = label, style = com.example.common.theme.Typography.h3)
                 }
             }
         }

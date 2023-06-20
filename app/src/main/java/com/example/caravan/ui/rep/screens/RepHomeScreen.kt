@@ -10,7 +10,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.caravan.R
-import com.example.caravan.common.components.MyTopBar
+import com.example.common.components.MyTopBar
 import com.example.caravan.domain.model.BottomNavItem
 import com.example.caravan.domain.navigation.Screens
 import com.example.caravan.ui.rep.screens.MyBuyersScreen
@@ -28,7 +28,7 @@ fun RepHomeScreen(
 
     Scaffold(
         topBar = {
-            MyTopBar(
+            com.example.common.components.MyTopBar(
                 navController = mainNavController!!,
             )
         },

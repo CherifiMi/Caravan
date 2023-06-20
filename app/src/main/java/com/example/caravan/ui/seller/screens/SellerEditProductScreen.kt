@@ -7,13 +7,11 @@ import android.os.Bundle
 import androidx.annotation.RequiresApi
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
@@ -21,9 +19,9 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import com.example.caravan.R
-import com.example.caravan.common.components.MyButton
-import com.example.caravan.common.components.MyTextField
-import com.example.caravan.theme.Typography
+import com.example.common.components.MyButton
+import com.example.common.components.MyTextField
+import com.example.common.theme.Typography
 import com.example.caravan.ui.seller.SellerViewModel
 import com.example.caravan.ui.seller.components.CatsPicker
 import com.example.caravan.ui.seller.components.PicsPicker
@@ -62,7 +60,7 @@ fun SellerEditProductScreen(
 
                         Text(
                             text = "caravan",
-                            style = Typography.h1,
+                            style = com.example.common.theme.Typography.h1,
                             textAlign = TextAlign.Start,
                             color = Color.White
                         )
@@ -97,26 +95,45 @@ fun SellerEditProductScreen(
             Text(
                 modifier = Modifier.padding(16.dp),
                 text = "Info",
-                style = Typography.h1
+                style = com.example.common.theme.Typography.h1
             )
 
-            MyTextField(state = viewModel.name, s = "Product name")
-            MyTextField(state = viewModel.content, s = "Product Description")
-            MyTextField(state = viewModel.minOrder, s = "Minimum Order Amount", isNum = true)
-            MyTextField(state = viewModel.inv, s = "Product Amount in Inventory", isNum = true)
-            MyTextField(state = viewModel.fPrice, s = "Original Price",  isNum = true)
-            MyTextField(state = viewModel.sPrice, s = "Discounted Price",  isNum = true)
+            com.example.common.components.MyTextField(state = viewModel.name, s = "Product name")
+            com.example.common.components.MyTextField(
+                state = viewModel.content,
+                s = "Product Description"
+            )
+            com.example.common.components.MyTextField(
+                state = viewModel.minOrder,
+                s = "Minimum Order Amount",
+                isNum = true
+            )
+            com.example.common.components.MyTextField(
+                state = viewModel.inv,
+                s = "Product Amount in Inventory",
+                isNum = true
+            )
+            com.example.common.components.MyTextField(
+                state = viewModel.fPrice,
+                s = "Original Price",
+                isNum = true
+            )
+            com.example.common.components.MyTextField(
+                state = viewModel.sPrice,
+                s = "Discounted Price",
+                isNum = true
+            )
 
             Spacer(modifier = Modifier.padding(16.dp))
 
-            MyButton(text = if (itemId.toInt()!=-1)"Update Product" else "Create a New Product") {
+            com.example.common.components.MyButton(text = if (itemId.toInt() != -1) "Update Product" else "Create a New Product") {
 
-                if (itemId.toInt()==-1){
-                    viewModel.createNewProduct(userId){
+                if (itemId.toInt() == -1) {
+                    viewModel.createNewProduct(userId) {
                         navController?.popBackStack()
                     }
-                }else{
-                    viewModel.updateProduct(userId){
+                } else {
+                    viewModel.updateProduct(userId) {
                         navController?.popBackStack()
                     }
                 }

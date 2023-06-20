@@ -5,13 +5,12 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.navigation.NavHostController
-import com.example.caravan.R
 import com.example.caravan.data.repository.AccountService
-import com.example.caravan.common.ext.isValidEmail
-import com.example.caravan.common.ext.isValidPassword
-import com.example.caravan.common.ext.onError
-import com.example.caravan.common.ext.showErrorExceptionHandler
-import com.example.caravan.common.snackbar.SnackbarManager
+import com.example.common.ext.isValidEmail
+import com.example.common.ext.isValidPassword
+import com.example.common.ext.onError
+import com.example.common.ext.showErrorExceptionHandler
+import com.example.common.snackbar.SnackbarManager
 import com.example.caravan.domain.navigation.Screens
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.*
@@ -44,15 +43,15 @@ class LoginViewModel @Inject constructor(
 
     fun onSignInClick(navController: NavHostController) {
         if (!email.value.isValidEmail()) {
-            SnackbarManager.showMessage(AppText.email_error)
+            com.example.common.snackbar.SnackbarManager.showMessage(AppText.email_error)
             return
         }
         if (password.value.isBlank() && password.value.isValidPassword()) {
-            SnackbarManager.showMessage(AppText.password_error)
+            com.example.common.snackbar.SnackbarManager.showMessage(AppText.password_error)
             return
         }
 
-        viewModelScope.launch(showErrorExceptionHandler) {
+        viewModelScope.launch(com.example.common.ext.showErrorExceptionHandler) {
             accountService.authenticate(email.value, password.value) { error ->
                 if (error == null) {
 
@@ -69,14 +68,14 @@ class LoginViewModel @Inject constructor(
                     }
 
 
-                } else onError(error)
+                } else com.example.common.ext.onError(error)
             }
         }
 
     }
 
     private fun linkWithEmail() {
-        viewModelScope.launch(showErrorExceptionHandler) {
+        viewModelScope.launch(com.example.common.ext.showErrorExceptionHandler) {
             accountService.linkAccount(email.value, password.value) { error ->
                 Log.d("LOGINTEST", error.toString())
             }

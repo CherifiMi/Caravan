@@ -12,10 +12,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
-import com.example.caravan.common.components.MyButton
-import com.example.caravan.common.components.MyTextField
+import com.example.common.components.MyButton
+import com.example.common.components.MyTextField
 import com.example.caravan.ui.signup.SignUpViewModel
-import com.example.caravan.theme.Typography
+import com.example.common.theme.Typography
 
 @Composable
 fun InfoRepScreen(
@@ -29,7 +29,7 @@ fun InfoRepScreen(
             Text(
                 modifier = Modifier.fillMaxWidth(),
                 text = "caravan",
-                style = Typography.h1,
+                style = com.example.common.theme.Typography.h1,
                 color = Color.White
             )
         })
@@ -39,28 +39,43 @@ fun InfoRepScreen(
             Text(
                 modifier = Modifier.padding(16.dp),
                 text = "Create Representative Account",
-                style = Typography.h1
+                style = com.example.common.theme.Typography.h1
             )
 
-            MyTextField(state = viewModel.email, s = "Email", isEM = true)
-            MyTextField(state = viewModel.password, s = "Password", isPW = true)
+            com.example.common.components.MyTextField(
+                state = viewModel.email,
+                s = "Email",
+                isEM = true
+            )
+            com.example.common.components.MyTextField(
+                state = viewModel.password,
+                s = "Password",
+                isPW = true
+            )
 
             Spacer(modifier = Modifier.height(16.dp))
 
             Text(
                 modifier = Modifier.padding(16.dp),
                 text = "Personal Information",
-                style = Typography.h1
+                style = com.example.common.theme.Typography.h1
             )
 
-            MyTextField(state = viewModel.first_name, s = "First Name")
-            MyTextField(state = viewModel.last_name, s = "Last Name")
-            MyTextField(state = viewModel.phone, s = "Phone Number", isNum = true)
+            com.example.common.components.MyTextField(
+                state = viewModel.first_name,
+                s = "First Name"
+            )
+            com.example.common.components.MyTextField(state = viewModel.last_name, s = "Last Name")
+            com.example.common.components.MyTextField(
+                state = viewModel.phone,
+                s = "Phone Number",
+                isNum = true
+            )
 
 
             Spacer(modifier = Modifier.height(32.dp))
 
-            MyButton(text = "Create my account") {
+            com.example.common.components.MyButton(text = "Create my account") {
                 viewModel.CreateNewUser(3, navController)
             }
 

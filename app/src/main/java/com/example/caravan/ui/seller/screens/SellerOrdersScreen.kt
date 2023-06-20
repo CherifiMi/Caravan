@@ -25,9 +25,9 @@ import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import com.example.caravan.domain.model.Order
-import com.example.caravan.theme.Montserrat
-import com.example.caravan.theme.PinkRed
-import com.example.caravan.theme.Typography
+import com.example.common.theme.Montserrat
+import com.example.common.theme.PinkRed
+import com.example.common.theme.Typography
 import com.example.caravan.ui.seller.SellerViewModel
 import okhttp3.internal.userAgent
 
@@ -45,7 +45,7 @@ fun SellerOrdersScreen(
         Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
             Text(
                 text = "...",
-                style = Typography.h1,
+                style = com.example.common.theme.Typography.h1,
                 textAlign = TextAlign.Center
             )
         }
@@ -54,7 +54,7 @@ fun SellerOrdersScreen(
         Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
             Text(
                 text = "You have 0 Orders",
-                style = Typography.h1,
+                style = com.example.common.theme.Typography.h1,
                 textAlign = TextAlign.Center
             )
         }
@@ -79,12 +79,12 @@ fun SellerOrdersScreen(
 fun OrderCard(item: Order, viewModel: SellerViewModel, userId: String) {
 
     val boldS = TextStyle(
-        fontFamily = Montserrat,
+        fontFamily = com.example.common.theme.Montserrat,
         fontWeight = FontWeight.SemiBold,
         fontSize = 14.sp
     )
     val thinS = TextStyle(
-        fontFamily = Montserrat,
+        fontFamily = com.example.common.theme.Montserrat,
         fontWeight = FontWeight.Normal,
         fontSize = 13.sp
     )
@@ -98,7 +98,7 @@ fun OrderCard(item: Order, viewModel: SellerViewModel, userId: String) {
         val brr = LocalHapticFeedback.current
         Card(
             shape = RoundedCornerShape(15.dp),
-            border = BorderStroke(2.dp, PinkRed),
+            border = BorderStroke(2.dp, com.example.common.theme.PinkRed),
             modifier = Modifier
                 .pointerInput(Unit){
                     detectTapGestures(
@@ -121,7 +121,7 @@ fun OrderCard(item: Order, viewModel: SellerViewModel, userId: String) {
                         .fillMaxWidth()
                         .padding(16.dp)
                 ) {
-                    Text(text = "Order: ", style = boldS, color = PinkRed)
+                    Text(text = "Order: ", style = boldS, color = com.example.common.theme.PinkRed)
                     Text(text = item.amount.toString(), style = boldS, color = Color.Black)
                     Text(text = " of ", style = thinS, color = Color.Black)
                     Text(text = viewModel.getProductNameById(item.productId), style = boldS, color = Color.Black)

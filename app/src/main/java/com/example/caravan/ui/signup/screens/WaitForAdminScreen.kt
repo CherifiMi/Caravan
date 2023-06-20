@@ -15,7 +15,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.example.caravan.R
-import com.example.caravan.theme.Typography
+import com.example.common.theme.Typography
 
 @Composable
 fun WaitForAdminScreen(
@@ -26,7 +26,7 @@ fun WaitForAdminScreen(
             Text(
                 modifier = Modifier.fillMaxWidth(),
                 text = "caravan",
-                style = Typography.h1,
+                style = com.example.common.theme.Typography.h1,
                 color = Color.White
             )
         })
@@ -39,7 +39,7 @@ fun WaitForAdminScreen(
         Text(
             modifier = Modifier.padding(horizontal = 32.dp),
             text = "Our admins are chaking your requast to join",
-            style = Typography.h6,
+            style = com.example.common.theme.Typography.h6,
             textAlign = TextAlign.Center
         )
     }

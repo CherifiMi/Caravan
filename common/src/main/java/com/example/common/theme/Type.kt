@@ -1,4 +1,4 @@
-package com.example.caravan.theme
+package com.example.common.theme
 
 import androidx.compose.material.Typography
 import androidx.compose.ui.text.TextStyle

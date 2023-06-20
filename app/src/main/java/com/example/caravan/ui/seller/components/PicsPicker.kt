@@ -11,7 +11,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.example.caravan.theme.Typography
+import com.example.common.theme.Typography
 import com.example.caravan.ui.seller.SellerViewModel
 
 @RequiresApi(Build.VERSION_CODES.O)
@@ -25,7 +25,7 @@ fun PicsPicker(viewModel: SellerViewModel, cn: ContentResolver) {
         Text(
             modifier = Modifier.padding(16.dp),
             text = "Images",
-            style = Typography.h1
+            style = com.example.common.theme.Typography.h1
         )
 
         ImageGrid(viewModel, cn)

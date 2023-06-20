@@ -13,7 +13,6 @@ import androidx.compose.foundation.lazy.*
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
-import androidx.compose.foundation.lazy.grid.itemsIndexed
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
@@ -36,11 +35,11 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import coil.compose.AsyncImage
 import com.example.caravan.R
-import com.example.caravan.common.components.MyProductItem
-import com.example.caravan.common.components.MyTopBar
+import com.example.common.components.MyProductItem
+import com.example.common.components.MyTopBar
 import com.example.caravan.domain.navigation.Screens
 import com.example.caravan.theme.*
-import com.example.caravan.common.components.SideMenu
+import com.example.common.components.SideMenu
 import com.example.caravan.ui.buyer.BuyerViewModel
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
@@ -64,7 +63,7 @@ fun BuyerHomeScreen(
 
         Scaffold(
             topBar = {
-                MyTopBar(
+                com.example.common.components.MyTopBar(
                     isCartV = true,
                     navController = navController,
                     function = { navController.navigate(Screens.CartBuyer.route) },
@@ -75,7 +74,7 @@ fun BuyerHomeScreen(
                     }
                 )
             },
-            drawerContent = { SideMenu(navController) },
+            drawerContent = { com.example.common.components.SideMenu(navController) },
             scaffoldState = state
         ) {
             Column(
@@ -128,7 +127,7 @@ fun CatsPopUp(viewModel: BuyerViewModel) {
                         Text(
                             modifier = Modifier.padding(16.dp),
                             text = "Categories",
-                            style = Typography.h1
+                            style = com.example.common.theme.Typography.h1
                         )
                     }
 
@@ -137,7 +136,7 @@ fun CatsPopUp(viewModel: BuyerViewModel) {
                         Text(
                             modifier = Modifier.padding(start = 16.dp, bottom = 4.dp),
                             text = item.name,
-                            style = Typography.h3
+                            style = com.example.common.theme.Typography.h3
                         )
 
                         LazyRow() {
@@ -156,13 +155,13 @@ fun CatsPopUp(viewModel: BuyerViewModel) {
                                         .clickable {
                                             viewModel.selectedSubCat(item)
                                         },
-                                    backgroundColor = PinkRed
+                                    backgroundColor = com.example.common.theme.PinkRed
                                 ) {
                                     Text(
                                         modifier = Modifier.padding(16.dp, 8.dp),
                                         text = item,
                                         color = Color.White,
-                                        style = Typography.h4
+                                        style = com.example.common.theme.Typography.h4
                                     )
                                 }
 
@@ -198,9 +197,9 @@ fun OurProductsWithSearch(viewModel: BuyerViewModel) {
     ) {
         TextField(
             modifier = Modifier.scale(scaleY = 0.9F, scaleX = 1F),
-            textStyle = Typography.h3,
+            textStyle = com.example.common.theme.Typography.h3,
             colors = TextFieldDefaults.textFieldColors(
-                backgroundColor = lightbox,
+                backgroundColor = com.example.common.theme.lightbox,
                 focusedIndicatorColor = Color.Transparent,
                 unfocusedIndicatorColor = Color.Transparent,
             ),
@@ -212,7 +211,7 @@ fun OurProductsWithSearch(viewModel: BuyerViewModel) {
             placeholder = {
                 Text(
                     text = "Search Products",
-                    style = Typography.h3,
+                    style = com.example.common.theme.Typography.h3,
                     color = Color.LightGray
                 )
             },
@@ -226,7 +225,7 @@ fun OurProductsWithSearch(viewModel: BuyerViewModel) {
                         .padding(8.dp),
                     imageVector = Icons.Filled.Search,
                     contentDescription = "",
-                    tint = lightblack
+                    tint = com.example.common.theme.lightblack
                 )
 
             },
@@ -287,7 +286,7 @@ fun ProductCategory(viewModel: BuyerViewModel) {
                 },
             border = BorderStroke(
                 2.dp,
-                if (viewModel.selectedCat.value == -1) PinkRed else LightGrey
+                if (viewModel.selectedCat.value == -1) com.example.common.theme.PinkRed else com.example.common.theme.LightGrey
             )
         ) {
             Spacer(
@@ -299,7 +298,7 @@ fun ProductCategory(viewModel: BuyerViewModel) {
             Text(
                 modifier = Modifier.padding(16.dp, 8.dp),
                 text = "All",
-                style = Typography.h3
+                style = com.example.common.theme.Typography.h3
             )
         }
 
@@ -318,7 +317,7 @@ fun ProductCategory(viewModel: BuyerViewModel) {
                     },
                 border = BorderStroke(
                     2.dp,
-                    if (viewModel.selectedCat.value == index) PinkRed else LightGrey
+                    if (viewModel.selectedCat.value == index) com.example.common.theme.PinkRed else com.example.common.theme.LightGrey
                 )
             ) {
                 Row(
@@ -335,7 +334,7 @@ fun ProductCategory(viewModel: BuyerViewModel) {
                     Text(
                         modifier = Modifier.padding(16.dp, 8.dp),
                         text = i.name,
-                        style = Typography.h3
+                        style = com.example.common.theme.Typography.h3
                     )
                 }
             }
@@ -357,8 +356,8 @@ fun ProductGrid(viewModel: BuyerViewModel, navController: NavHostController) {
         ) {
 
             items(items = viewModel.x.value) { item ->
-                MyProductItem(item!!, true) {
-                    navController.navigate(Screens.ProductBuyer.passItem(index = item.id?: ""))
+                com.example.common.components.MyProductItem(item!!, true) {
+                    navController.navigate(Screens.ProductBuyer.passItem(index = item.id ?: ""))
                 }
             }
         }
@@ -366,7 +365,7 @@ fun ProductGrid(viewModel: BuyerViewModel, navController: NavHostController) {
         Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
             Text(
                 text = "there is no data",
-                style = Typography.h1,
+                style = com.example.common.theme.Typography.h1,
                 textAlign = TextAlign.Center
             )
         }

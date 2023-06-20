@@ -68,13 +68,13 @@ fun BottomLayer(
                 onClick = {
                     viewModel.buyOrAddToCartSheet.value = true
                 },
-                backgroundColor = PinkRed
+                backgroundColor = com.example.common.theme.PinkRed
             ) {
                 Icon(
                     modifier = Modifier.size(24.dp),
                     painter = painterResource(id = R.drawable.cart_full),
                     contentDescription = "Add To Cart",
-                    tint = white
+                    tint = com.example.common.theme.white
                 )
             }
         }
@@ -114,7 +114,7 @@ fun BottomLayer(
 
             Card(
                 shape = RoundedCornerShape(100.dp),
-                backgroundColor = LightGrey,
+                backgroundColor = com.example.common.theme.LightGrey,
                 modifier = Modifier
                     .padding(150.dp, 16.dp)
                     .fillMaxWidth()
@@ -125,7 +125,7 @@ fun BottomLayer(
                 modifier = Modifier.padding(horizontal = 16.dp),
                 text = currantItem.name ,
                 style = TextStyle(
-                    fontFamily = Montserrat,
+                    fontFamily = com.example.common.theme.Montserrat,
                     fontWeight = FontWeight.Normal,
                     fontSize = 24.sp
                 )
@@ -152,9 +152,9 @@ fun BottomLayer(
             ) {
                 Text(
                     text = "SR ",
-                    color = PinkRed,
+                    color = com.example.common.theme.PinkRed,
                     style = TextStyle(
-                        fontFamily = Montserrat,
+                        fontFamily = com.example.common.theme.Montserrat,
                         fontWeight = FontWeight.SemiBold,
                         fontSize = 18.sp
                     )
@@ -162,7 +162,7 @@ fun BottomLayer(
                 Text(
                     text = (currantItem.newPrice).toString() ,
                     style = TextStyle(
-                        fontFamily = Montserrat,
+                        fontFamily = com.example.common.theme.Montserrat,
                         fontWeight = FontWeight.SemiBold,
                         fontSize = 24.sp
                     )
@@ -172,8 +172,8 @@ fun BottomLayer(
                 Text(
                     text = "RS " + (currantItem.initPrice).toString(),
                     textDecoration = TextDecoration.LineThrough,
-                    style = Typography.h3,
-                    color = LightGrey
+                    style = com.example.common.theme.Typography.h3,
+                    color = com.example.common.theme.LightGrey
                 )
             }
 
@@ -183,7 +183,7 @@ fun BottomLayer(
                 modifier = Modifier.padding(16.dp),
                 text = currantItem.content ,
                 style = TextStyle(
-                    fontFamily = Montserrat,
+                    fontFamily = com.example.common.theme.Montserrat,
                     fontWeight = FontWeight.Medium,
                     fontSize = 16.sp,
                     lineHeight = 24.sp
@@ -203,7 +203,7 @@ fun ImagePickerCard(url: String, i: Int, viewModel: BuyerViewModel) {
         shape = RoundedCornerShape(15.dp),
         border = BorderStroke(
             width = 2.dp,
-            color = if (viewModel.thisImage.value == i) PinkRed else LightGrey
+            color = if (viewModel.thisImage.value == i) com.example.common.theme.PinkRed else com.example.common.theme.LightGrey
         ),
         modifier = Modifier
             .size(width = 64.dp, height = 54.dp)
@@ -236,12 +236,12 @@ fun SubCatCard(item: String) {
         modifier = Modifier
             .wrapContentHeight()
             .clip(RoundedCornerShape(10.dp)),
-        border = BorderStroke(2.dp, PinkRed )
+        border = BorderStroke(2.dp, com.example.common.theme.PinkRed)
     ) {
         Text(
             modifier = Modifier.padding(16.dp, 8.dp),
             text = item,
-            style = Typography.h4
+            style = com.example.common.theme.Typography.h4
         )
     }
 
