@@ -1,4 +1,4 @@
-package com.example.caravan.ui.buyer.components
+package com.example.buyer.ui.components
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.LinearOutSlowInEasing
@@ -31,7 +31,7 @@ import com.example.common.theme.LightGrey
 import com.example.common.theme.Montserrat
 import com.example.common.theme.PinkRed
 import com.example.common.theme.Typography
-import com.example.caravan.ui.buyer.BuyerViewModel
+import com.example.buyer.ui.BuyerViewModel
 import com.stripe.android.payments.paymentlauncher.PaymentLauncher
 
 

@@ -1,4 +1,4 @@
-package com.example.caravan.ui.login
+package com.example.login.presentation
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
@@ -14,7 +14,6 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
-import com.example.caravan.R
 import com.example.common.components.MyButton
 import com.example.common.components.MyTextField
 import com.example.common.theme.PinkRed

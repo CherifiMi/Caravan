@@ -1,4 +1,4 @@
-package com.example.caravan.ui.errors
+package com.example.common.screens.errors
 
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable

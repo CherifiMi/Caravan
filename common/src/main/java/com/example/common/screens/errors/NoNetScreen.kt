@@ -1,4 +1,4 @@
-package com.example.caravan.ui.errors
+package com.example.common.screens.errors
 
 import androidx.compose.animation.core.*
 import androidx.compose.foundation.background

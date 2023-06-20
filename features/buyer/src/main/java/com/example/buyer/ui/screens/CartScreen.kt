@@ -1,4 +1,4 @@
-package com.example.caravan.ui.buyer.screens
+package com.example.buyer.ui.screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -24,7 +24,7 @@ import com.example.caravan.domain.navigation.Screens
 import com.example.common.theme.Montserrat
 import com.example.common.theme.PinkRed
 import com.example.common.theme.Typography
-import com.example.caravan.ui.buyer.BuyerViewModel
+import com.example.buyer.ui.BuyerViewModel
 import com.example.caravan.ui.errors.NoNetScreen
 import com.stripe.android.payments.paymentlauncher.PaymentLauncher
 

@@ -14,12 +14,12 @@ import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import com.example.caravan.MainApp
 import com.example.caravan.MainViewModel
-import com.example.caravan.ui.buyer.screens.BuyerHomeScreen
-import com.example.caravan.ui.buyer.screens.BuyerProductScreen
-import com.example.caravan.ui.buyer.screens.CartScreen
-import com.example.caravan.ui.errors.NoNetScreen
-import com.example.caravan.ui.errors.SomethingWrongScreen
-import com.example.caravan.ui.login.LoginScreen
+import com.example.buyer.ui.screens.BuyerHomeScreen
+import com.example.buyer.ui.screens.BuyerProductScreen
+import com.example.buyer.ui.screens.CartScreen
+import com.example.common.screens.errors.NoNetScreen
+import com.example.common.screens.errors.SomethingWrongScreen
+import com.example.login.ui.LoginScreen
 import com.example.caravan.ui.rep.RepHomeScreen
 import com.example.caravan.ui.seller.SellerHomeScreen
 import com.example.caravan.ui.seller.screens.SellerEditProductScreen
@@ -63,7 +63,7 @@ fun Navigation(
         }
 
         composable(route = Screens.Login.route) {
-            LoginScreen(navController = navController)
+            com.example.login.ui.LoginScreen(navController = navController)
         }
         composable(route = Screens.SelectUserType.route) {
             SelectUserScreen(navController = navController)
@@ -84,17 +84,29 @@ fun Navigation(
 
 
         composable(route = Screens.HomeBuyer.route) {
-            BuyerHomeScreen(navController = navController,userId = userId)
+            com.example.buyer.ui.screens.BuyerHomeScreen(
+                navController = navController,
+                userId = userId
+            )
         }
         composable(route = Screens.CartBuyer.route) {
-            CartScreen(navController = navController, userId = userId, paymentLauncher = paymentLauncher)
+            com.example.buyer.ui.screens.CartScreen(
+                navController = navController,
+                userId = userId,
+                paymentLauncher = paymentLauncher
+            )
         }
         composable(
             route = Screens.ProductBuyer.route,
             arguments = listOf(navArgument(name = "index"){type = NavType.StringType})
         ) {
             var index = it.arguments
-            BuyerProductScreen(navController = navController, args = index, paymentLauncher = paymentLauncher, userId = userId)
+            com.example.buyer.ui.screens.BuyerProductScreen(
+                navController = navController,
+                args = index,
+                paymentLauncher = paymentLauncher,
+                userId = userId
+            )
         }
 
 
@@ -115,10 +127,10 @@ fun Navigation(
         }
 
         composable(route = Screens.SWError.route) {
-            SomethingWrongScreen(navController = navController)
+            com.example.common.screens.errors.SomethingWrongScreen(navController = navController)
         }
         composable(route = Screens.NoNetError.route) {
-            NoNetScreen()
+            com.example.common.screens.errors.NoNetScreen()
         }
     }
 

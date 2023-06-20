@@ -1,4 +1,4 @@
-package com.example.caravan.ui.buyer.screens
+package com.example.buyer.ui.screens
 
 
 import android.annotation.SuppressLint
@@ -40,7 +40,7 @@ import com.example.common.components.MyTopBar
 import com.example.caravan.domain.navigation.Screens
 import com.example.caravan.theme.*
 import com.example.common.components.SideMenu
-import com.example.caravan.ui.buyer.BuyerViewModel
+import com.example.buyer.ui.BuyerViewModel
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 

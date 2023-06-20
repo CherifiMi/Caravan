@@ -28,7 +28,7 @@ import com.example.common.snackbar.SnackbarManager
 import com.example.caravan.domain.ConnectivityObserver
 import com.example.caravan.domain.NetworkConnectivityObserver
 import com.example.common.theme.CaravanTheme
-import com.example.caravan.ui.buyer.BuyerViewModel
+import com.example.buyer.ui.BuyerViewModel
 import com.stripe.android.PaymentConfiguration
 import com.stripe.android.payments.paymentlauncher.PaymentLauncher
 import com.stripe.android.payments.paymentlauncher.PaymentResult
@@ -40,7 +40,7 @@ val canOrder = mutableStateOf(false)
 class MainActivity: ComponentActivity() {
 
     private val viewModel: MainViewModel by viewModels()
-    lateinit var buyerViewModel: BuyerViewModel
+    lateinit var buyerViewModel: com.example.buyer.ui.BuyerViewModel
     lateinit var connectivityObserver: ConnectivityObserver
 
     @RequiresApi(Build.VERSION_CODES.O)

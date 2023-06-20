@@ -1,4 +1,4 @@
-package com.example.caravan.ui.buyer
+package com.example.buyer.ui
 
 
 import android.util.Log
@@ -9,7 +9,6 @@ import androidx.lifecycle.viewModelScope
 import com.example.caravan.R
 import com.example.common.snackbar.SnackbarManager
 import com.example.caravan.data.repository.CaravanRepository
-import com.example.caravan.data.util.Result
 import com.example.caravan.domain.model.*
 import com.example.caravan.domain.use_cases.GetProductByIdUseCase
 import com.example.caravan.domain.use_cases.GetProductsUseCase
