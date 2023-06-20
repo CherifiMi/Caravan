@@ -50,13 +50,13 @@ android {
 
 dependencies {
 
-    implementation(project(":core:common"))
+    implementation(project(":common"))
 
     implementation(project(":features:buyer"))
     implementation(project(":features:rep"))
     implementation(project(":features:seller"))
 
-    implementation(project(":features:logging"))
+    implementation(project(":features:login"))
     implementation(project(":features:signup"))
 
 
