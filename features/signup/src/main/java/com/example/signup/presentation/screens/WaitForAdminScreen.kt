@@ -1,4 +1,4 @@
-package com.example.caravan.ui.signup.screens
+package com.example.signup.presentation.screens
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column

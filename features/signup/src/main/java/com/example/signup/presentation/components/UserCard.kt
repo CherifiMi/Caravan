@@ -1,4 +1,4 @@
-package com.example.caravan.ui.signup.components
+package com.example.signup.presentation.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
@@ -14,11 +14,9 @@ import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import com.example.caravan.R
 import com.example.common.theme.LightGrey
 import com.example.common.theme.PinkRed
 import com.example.common.theme.Typography
-import com.example.caravan.ui.signup.SignUpViewModel
 
 @Composable
 fun UserCard(painterResource: Painter, s: String, i: Int, state: MutableState<Int>) {

@@ -1,4 +1,4 @@
-package com.example.caravan.ui.signup.screens
+package com.example.signup.presentation.screens
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
@@ -22,7 +22,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import com.example.common.components.MyButton
 import com.example.common.components.MyTextField
-import com.example.caravan.ui.signup.SignUpViewModel
+import com.example.signup.presentation.SignUpViewModel
 import com.example.common.theme.Typography
 
 @Composable

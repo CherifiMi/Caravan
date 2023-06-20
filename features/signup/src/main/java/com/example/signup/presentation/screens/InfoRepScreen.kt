@@ -1,4 +1,5 @@
-package com.example.caravan.ui.signup.screens
+package com.example.signup.presentation.screens
+
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
@@ -13,11 +14,11 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import com.example.common.components.MyButton
 import com.example.common.components.MyTextField
-import com.example.caravan.ui.signup.SignUpViewModel
+import com.example.signup.presentation.SignUpViewModel
 import com.example.common.theme.Typography
 
 @Composable
-fun InfoBuyerScreen(
+fun InfoRepScreen(
     navController: NavHostController,
     viewModel: SignUpViewModel = hiltViewModel()
 ) {
@@ -37,7 +38,7 @@ fun InfoBuyerScreen(
 
             Text(
                 modifier = Modifier.padding(16.dp),
-                text = "Create Buyer Account",
+                text = "Create Representative Account",
                 style = com.example.common.theme.Typography.h1
             )
 
@@ -54,48 +55,6 @@ fun InfoBuyerScreen(
 
             Spacer(modifier = Modifier.height(16.dp))
 
-
-            Text(
-                modifier = Modifier.padding(16.dp),
-                text = "Payment Info",
-                style = com.example.common.theme.Typography.h1
-            )
-
-            com.example.common.components.MyTextField(state = viewModel.chn, s = "Card Holder Name")
-            com.example.common.components.MyTextField(
-                state = viewModel.num,
-                s = "Card Number",
-                isNum = true
-            )
-
-            Row(Modifier.fillMaxWidth()) {
-                Box(modifier = Modifier.weight(2f)) {
-                    com.example.common.components.MyTextField(
-                        state = viewModel.cvc,
-                        s = "CVC",
-                        isNum = true
-                    )
-                }
-                Box(modifier = Modifier.weight(1f)) {
-                    com.example.common.components.MyTextField(
-                        state = viewModel.exM,
-                        s = "MM",
-                        isNum = true
-                    )
-                }
-                Box(modifier = Modifier.weight(1f)) {
-                    com.example.common.components.MyTextField(
-                        state = viewModel.exY,
-                        s = "YY",
-                        isNum = true
-                    )
-                }
-            }
-
-
-
-            Spacer(modifier = Modifier.height(16.dp))
-
             Text(
                 modifier = Modifier.padding(16.dp),
                 text = "Personal Information",
@@ -108,11 +67,6 @@ fun InfoBuyerScreen(
             )
             com.example.common.components.MyTextField(state = viewModel.last_name, s = "Last Name")
             com.example.common.components.MyTextField(
-                state = viewModel.brand_name,
-                s = "Brand Name"
-            )
-            com.example.common.components.MyTextField(state = viewModel.address, s = "Address")
-            com.example.common.components.MyTextField(
                 state = viewModel.phone,
                 s = "Phone Number",
                 isNum = true
@@ -122,10 +76,12 @@ fun InfoBuyerScreen(
             Spacer(modifier = Modifier.height(32.dp))
 
             com.example.common.components.MyButton(text = "Create my account") {
-                viewModel.CreateNewUser(1, navController)
+                viewModel.CreateNewUser(3, navController)
             }
-            
+
             Spacer(modifier = Modifier.height(280.dp))
         }
+
+
     }
 }

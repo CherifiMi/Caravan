@@ -1,4 +1,4 @@
-package com.example.caravan.ui.signup
+package com.example.signup.presentation
 
 import android.util.Log
 import androidx.compose.runtime.mutableStateOf

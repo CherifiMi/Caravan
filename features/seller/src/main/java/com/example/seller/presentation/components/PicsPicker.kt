@@ -1,4 +1,4 @@
-package com.example.caravan.ui.seller.components
+package com.example.seller.presentation.components
 
 import android.content.ContentResolver
 import android.os.Build
@@ -12,7 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.example.common.theme.Typography
-import com.example.caravan.ui.seller.SellerViewModel
+import com.example.seller.presentation.SellerViewModel
 
 @RequiresApi(Build.VERSION_CODES.O)
 @Composable

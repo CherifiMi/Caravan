@@ -1,10 +1,8 @@
 package com.example.rep.presentation
 
 import android.util.Log
-import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
 import com.example.caravan.data.repository.CaravanRepository
 import com.example.caravan.domain.model.*
 import com.example.caravan.domain.use_cases.GetBuyerByKeyUseCase
@@ -13,7 +11,6 @@ import com.google.gson.Gson
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.async
 import kotlinx.coroutines.flow.collectLatest
-import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import javax.inject.Inject
 

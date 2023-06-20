@@ -1,7 +1,6 @@
 package com.example.caravan.domain.model
 
 
-import com.example.caravan.ui.seller.SellerViewModel
 import com.google.gson.annotations.SerializedName
 
 data class Order(

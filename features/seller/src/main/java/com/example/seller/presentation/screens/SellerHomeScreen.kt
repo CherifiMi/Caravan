@@ -12,14 +12,14 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.caravan.R
 import com.example.common.components.MyTopBar
 import com.example.common.components.SideMenu
 import com.example.caravan.domain.model.BottomNavItem
 import com.example.caravan.domain.navigation.Screens
-import com.example.caravan.ui.seller.components.BottomNavigationBar
-import com.example.caravan.ui.seller.screens.SellerOrdersScreen
-import com.example.caravan.ui.seller.screens.SellerProductsScreen
+import com.example.seller.presentation.SellerViewModel
+import com.example.seller.presentation.components.BottomNavigationBar
+import com.example.seller.presentation.screens.SellerOrdersScreen
+import com.example.seller.presentation.screens.SellerProductsScreen
 import kotlinx.coroutines.launch
 
 @RequiresApi(Build.VERSION_CODES.O)

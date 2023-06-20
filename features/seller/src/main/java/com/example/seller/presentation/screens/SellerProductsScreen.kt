@@ -1,4 +1,4 @@
-package com.example.caravan.ui.seller.screens
+package com.example.seller.presentation.screens
 
 
 import android.annotation.SuppressLint
@@ -29,7 +29,7 @@ import com.example.common.snackbar.SnackbarManager
 import com.example.caravan.domain.navigation.Screens
 import com.example.common.theme.PinkRed
 import com.example.common.theme.Typography
-import com.example.caravan.ui.seller.SellerViewModel
+import com.example.seller.presentation.SellerViewModel
 
 @RequiresApi(Build.VERSION_CODES.O)
 @SuppressLint("StateFlowValueCalledInComposition", "UnusedMaterialScaffoldPaddingParameter")

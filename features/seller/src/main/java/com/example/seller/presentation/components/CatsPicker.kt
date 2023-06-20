@@ -1,4 +1,4 @@
-package com.example.caravan.ui.seller.components
+package com.example.seller.presentation.components
 
 import android.os.Build
 import android.util.Log
@@ -21,7 +21,7 @@ import com.example.caravan.domain.model.Cat
 import com.example.common.theme.LightGrey
 import com.example.common.theme.PinkRed
 import com.example.common.theme.Typography
-import com.example.caravan.ui.seller.SellerViewModel
+import com.example.seller.presentation.SellerViewModel
 
 @RequiresApi(Build.VERSION_CODES.O)
 @Composable

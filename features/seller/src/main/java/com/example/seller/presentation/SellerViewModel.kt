@@ -1,4 +1,4 @@
-package com.example.caravan.ui.seller
+package com.example.seller.presentation
 
 import android.content.ContentResolver
 import android.net.Uri
@@ -13,7 +13,6 @@ import androidx.navigation.NavHostController
 import com.example.caravan.R
 import com.example.common.snackbar.SnackbarManager
 import com.example.caravan.data.repository.CaravanRepository
-import com.example.caravan.data.util.Result
 import com.example.caravan.domain.model.*
 import com.example.caravan.domain.use_cases.*
 import com.google.gson.Gson

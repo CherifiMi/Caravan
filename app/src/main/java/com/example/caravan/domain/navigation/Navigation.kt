@@ -22,7 +22,7 @@ import com.example.common.screens.errors.SomethingWrongScreen
 import com.example.login.ui.LoginScreen
 import com.example.caravan.ui.rep.RepHomeScreen
 import com.example.caravan.ui.seller.SellerHomeScreen
-import com.example.caravan.ui.seller.screens.SellerEditProductScreen
+import com.example.seller.ui.screens.SellerEditProductScreen
 import com.example.caravan.ui.signup.screens.*
 import com.stripe.android.payments.paymentlauncher.PaymentLauncher
 
@@ -66,20 +66,20 @@ fun Navigation(
             com.example.login.ui.LoginScreen(navController = navController)
         }
         composable(route = Screens.SelectUserType.route) {
-            SelectUserScreen(navController = navController)
+            com.example.signup.presentation.screens.SelectUserScreen(navController = navController)
         }
 
         composable(route = Screens.InfoBuyer.route) {
-            InfoBuyerScreen(navController = navController)
+            com.example.signup.presentation.screens.InfoBuyerScreen(navController = navController)
         }
         composable(route = Screens.InfoSeller.route) {
-            InfoSellerScreen(navController = navController)
+            com.example.signup.presentation.screens.InfoSellerScreen(navController = navController)
         }
         composable(route = Screens.InfoRep.route) {
-            InfoRepScreen(navController = navController)
+            com.example.signup.presentation.screens.InfoRepScreen(navController = navController)
         }
         composable(route = Screens.Wait.route) {
-            WaitForAdminScreen(navController = navController)
+            com.example.signup.presentation.screens.WaitForAdminScreen(navController = navController)
         }
 
 
@@ -118,7 +118,12 @@ fun Navigation(
             arguments = listOf(navArgument(name = "item"){type = NavType.StringType})
         ) {
             var item = it.arguments
-            SellerEditProductScreen(navController = navController, cn = cn, args = item, userId = userId)
+            com.example.seller.ui.screens.SellerEditProductScreen(
+                navController = navController,
+                cn = cn,
+                args = item,
+                userId = userId
+            )
         }
 
 

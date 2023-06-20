@@ -1,4 +1,4 @@
-package com.example.caravan.ui.signup.screens
+package com.example.signup.presentation.screens
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -13,13 +13,12 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
-import com.example.caravan.R
 import com.example.common.components.MyButton
-import com.example.caravan.ui.signup.components.UserCard
+import com.example.signup.presentation.components.UserCard
 import com.example.common.theme.LightGrey
 import com.example.common.theme.PinkRed
 import com.example.common.theme.Typography
-import com.example.caravan.ui.signup.SignUpViewModel
+import com.example.signup.presentation.SignUpViewModel
 import com.example.caravan.domain.navigation.Screens
 
 @Composable

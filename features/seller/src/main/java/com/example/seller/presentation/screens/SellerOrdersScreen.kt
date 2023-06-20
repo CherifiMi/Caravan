@@ -1,8 +1,7 @@
-package com.example.caravan.ui.seller.screens
+package com.example.seller.presentation.screens
 
 import android.util.Log
 import androidx.compose.foundation.BorderStroke
-import androidx.compose.foundation.combinedClickable
 import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -28,8 +27,7 @@ import com.example.caravan.domain.model.Order
 import com.example.common.theme.Montserrat
 import com.example.common.theme.PinkRed
 import com.example.common.theme.Typography
-import com.example.caravan.ui.seller.SellerViewModel
-import okhttp3.internal.userAgent
+import com.example.seller.presentation.SellerViewModel
 
 
 @Composable

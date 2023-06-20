@@ -1,4 +1,4 @@
-package com.example.caravan.ui.seller.screens
+package com.example.seller.presentation.screens
 
 import android.annotation.SuppressLint
 import android.content.ContentResolver
@@ -22,9 +22,9 @@ import com.example.caravan.R
 import com.example.common.components.MyButton
 import com.example.common.components.MyTextField
 import com.example.common.theme.Typography
-import com.example.caravan.ui.seller.SellerViewModel
-import com.example.caravan.ui.seller.components.CatsPicker
-import com.example.caravan.ui.seller.components.PicsPicker
+import com.example.seller.presentation.SellerViewModel
+import com.example.seller.presentation.components.CatsPicker
+import com.example.seller.presentation.components.PicsPicker
 
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
