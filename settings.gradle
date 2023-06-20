@@ -15,7 +15,6 @@ dependencyResolutionManagement {
 rootProject.name = "Caravan"
 include ':app'
 include ':common'
-include ':features'
 
 include ':features:buyer'
 include ':features:login'

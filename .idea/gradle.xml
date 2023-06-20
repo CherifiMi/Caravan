@@ -18,6 +18,7 @@
             <option value="$PROJECT_DIR$/features/login" />
             <option value="$PROJECT_DIR$/features/rep" />
             <option value="$PROJECT_DIR$/features/seller" />
+            <option value="$PROJECT_DIR$/features/signup" />
           </set>
         </option>
       </GradleProjectSettings>
