@@ -1,4 +1,4 @@
-package com.example.buyer.ui.screens
+package com.example.buyer.presentation.screens
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -26,8 +26,8 @@ import coil.compose.AsyncImage
 import com.example.caravan.R
 import com.example.caravan.domain.model.Product
 import com.example.caravan.theme.*
-import com.example.buyer.ui.BuyerViewModel
-import com.example.buyer.ui.components.BuyProductPopUp
+import com.example.buyer.presentation.BuyerViewModel
+import com.example.buyer.presentation.components.BuyProductPopUp
 import com.stripe.android.payments.paymentlauncher.PaymentLauncher
 
 

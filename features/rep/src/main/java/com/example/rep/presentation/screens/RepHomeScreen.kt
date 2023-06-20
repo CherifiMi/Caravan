@@ -13,9 +13,10 @@ import com.example.caravan.R
 import com.example.common.components.MyTopBar
 import com.example.caravan.domain.model.BottomNavItem
 import com.example.caravan.domain.navigation.Screens
-import com.example.caravan.ui.rep.screens.MyBuyersScreen
-import com.example.caravan.ui.rep.screens.MySellersScreen
+import com.example.rep.presentation.screens.MyBuyersScreen
+import com.example.rep.presentation.screens.MySellersScreen
 import com.example.caravan.ui.seller.components.BottomNavigationBar
+import com.example.rep.presentation.RepViewModel
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable

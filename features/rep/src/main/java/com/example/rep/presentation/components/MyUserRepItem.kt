@@ -1,4 +1,4 @@
-package com.example.caravan.ui.rep.components
+package com.example.rep.presentation.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable

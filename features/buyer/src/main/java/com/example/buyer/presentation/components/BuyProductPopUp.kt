@@ -1,4 +1,4 @@
-package com.example.buyer.ui.components
+package com.example.buyer.presentation.components
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.LinearOutSlowInEasing
@@ -31,7 +31,7 @@ import com.example.common.theme.LightGrey
 import com.example.common.theme.Montserrat
 import com.example.common.theme.PinkRed
 import com.example.common.theme.Typography
-import com.example.buyer.ui.BuyerViewModel
+import com.example.buyer.presentation.BuyerViewModel
 import com.stripe.android.payments.paymentlauncher.PaymentLauncher
 
 
