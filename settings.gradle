@@ -19,3 +19,6 @@ include ':features'
 
 include ':features:buyer'
 include ':features:login'
+include ':features:rep'
+include ':features:seller'
+include ':features:signup'
