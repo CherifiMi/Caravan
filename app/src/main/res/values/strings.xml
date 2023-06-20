@@ -1,0 +1,62 @@
+<resources>
+    <string name="app_name">Touchauto</string>
+    <!-- Common -->
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="repeat_password">Repeat password</string>
+    <string name="generic_error">Something wrong happened. Please try again.</string>
+    <string name="email_error">Please insert a valid email.</string>
+    <string name="empty_data">Please Fill all the fields</string>
+    <string name="FpSp">Original price should be bigger then the discounted price</string>
+    <string name="cancel">Cancel</string>
+    <string name="account_created">you have created a new account.</string>
+    <string name="product_created">you have created a new product.</string>
+    <string name="product_updated">you have updated the product.</string>
+    <string name="product_deleted">you have deleted a product.</string>
+    <string name="already_exist">this account already exist</string>
+    <string name="no_pay">couldn\'t make this payment</string>
+
+    <string name="invalid_amount">the amount you have entered is not valid</string>
+    <string name="less_then_min">you can\'t order less then the minimum order amount</string>
+    <string name="low_inv">not enough in inventory</string>
+
+    <string name="payout">you haven\'t completed your payment information</string>
+    <!-- LoginScreen -->
+    <string name="sign_in">Sign in</string>
+    <string name="login_details">Enter your login details</string>
+    <string name="forgot_password">Forgot password? Click to get recovery email</string>
+    <string name="recovery_email_sent">Check your inbox for the recovery email.</string>
+    <string name="empty_password_error">Password cannot be empty.</string>
+
+    <!-- SignUpScreen -->
+    <string name="create_account">Create account</string>
+    <string name="password_error">Your password  is not valid.</string>
+    <string name="password_match_error">Passwords do not match.</string>
+    <string name="somthing_wrong">Email or Password is not valid</string>
+    <string name="card_error">Card Info Not Valid</string>
+    <string name="incorrect_data">some information is wrong</string>
+
+
+    <string name="lorem_ipsem">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        Lorem Ipsum has been the industry
+        s standard dummy text ever since the 1500s,
+        when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+    </string>
+
+    <string name="product_text_description">
+        Clean lines, versatile and timeless—the people shoe
+ returns with the Nike Air Max 90.
+Featuring the same iconic Waffle sole,
+stitched overlays and classic TPU accents
+ you come to love, it lets you walk among
+ the pantheon of Air. ßNothing as fly,
+nothing as comfortable, nothing as proven.
+The Nike Air Max 90 stays true to its OG running
+ roots with the iconic Waffle sole,
+stitched overlays and classic TPU details.
+Classic colours celebrate your fresh look
+while Max Air cushioning adds comfort to the journey.
+    </string>
+</resources>
