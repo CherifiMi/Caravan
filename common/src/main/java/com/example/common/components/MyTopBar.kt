@@ -6,8 +6,6 @@ import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
 import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.Menu
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -17,18 +15,14 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
-import com.example.caravan.MainViewModel
-import com.example.caravan.R
-import com.example.caravan.gAppState
-import com.example.caravan.theme.Typography
+import com.example.common.R
+import com.example.common.theme.Typography
 
 
 @Composable
 fun MyTopBar(
     navController: NavHostController,
-    viewModel: MainViewModel = hiltViewModel(),
     isCartV: Boolean = false,
     humClicked: () -> Unit = {},
     function: () -> Unit = {}
@@ -49,16 +43,7 @@ fun MyTopBar(
                 horizontalArrangement = Arrangement.Start
             ) {
 
-                /*IconButton(
-                    onClick = {
-                        humClicked()
-                    }
-                ) {
-                    Icon(
-                        imageVector = Icons.Outlined.Menu,
-                        contentDescription = ""
-                    )
-                }*/
+
                 Spacer(modifier = Modifier.padding(8.dp))
                 Text(
                     text =  stringResource(R.string.app_name),
