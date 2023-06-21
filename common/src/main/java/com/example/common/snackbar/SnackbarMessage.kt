@@ -18,7 +18,7 @@ package com.example.makeitso.common.snackbar
 
 import android.content.res.Resources
 import androidx.annotation.StringRes
-import com.example.caravan.R.string as AppText
+import com.example.common.R.string as AppText
 
 sealed class SnackbarMessage {
     class StringSnackbar(val message: String): SnackbarMessage()
