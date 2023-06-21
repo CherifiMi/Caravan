@@ -28,6 +28,7 @@ import com.example.caravan.domain.model.Product
 import com.example.caravan.theme.*
 import com.example.buyer.presentation.BuyerViewModel
 import com.example.buyer.presentation.components.BuyProductPopUp
+import com.example.common.domain.model.Product
 import com.stripe.android.payments.paymentlauncher.PaymentLauncher
 
 
@@ -36,7 +37,6 @@ fun BuyerProductScreen(
     navController: NavHostController?,
     args: Bundle?,
     viewModel: BuyerViewModel = hiltViewModel(),
-    paymentLauncher: PaymentLauncher?,
     userId: String
 ) {
 

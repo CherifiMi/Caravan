@@ -26,6 +26,8 @@ import com.example.common.theme.PinkRed
 import com.example.common.theme.Typography
 import com.example.buyer.presentation.BuyerViewModel
 import com.example.caravan.ui.errors.NoNetScreen
+import com.example.common.domain.model.SavedCartOrder
+import com.example.common.screens.errors.NoNetScreen
 import com.stripe.android.payments.paymentlauncher.PaymentLauncher
 
 
@@ -71,7 +73,6 @@ fun CartScreen(
     navController: NavHostController?,
     userId: String,
     viewModel: BuyerViewModel = hiltViewModel(),
-    paymentLauncher: PaymentLauncher
 ) {
     val savedItems = viewModel.getAllSavedCardOrders()
 

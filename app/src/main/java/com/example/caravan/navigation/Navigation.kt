@@ -12,11 +12,13 @@ import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
+import com.example.buyer.presentation.screens.CartScreen
 import com.example.caravan.MainApp
 import com.example.caravan.MainViewModel
 import com.example.caravan.ui.rep.RepHomeScreen
 import com.example.caravan.ui.seller.SellerHomeScreen
 import com.example.login.presentation.LoginScreen
+import com.example.signup.presentation.screens.*
 import com.stripe.android.payments.paymentlauncher.PaymentLauncher
 
 
@@ -56,20 +58,20 @@ fun Navigation(
             LoginScreen(navController = navController)
         }
         composable(route = Screens.SelectUserType.route) {
-            com.example.signup.presentation.screens.SelectUserScreen(navController = navController)
+            SelectUserScreen(navController = navController)
         }
 
         composable(route = Screens.InfoBuyer.route) {
-            com.example.signup.presentation.screens.InfoBuyerScreen(navController = navController)
+            InfoBuyerScreen(navController = navController)
         }
         composable(route = Screens.InfoSeller.route) {
-            com.example.signup.presentation.screens.InfoSellerScreen(navController = navController)
+            InfoSellerScreen(navController = navController)
         }
         composable(route = Screens.InfoRep.route) {
-            com.example.signup.presentation.screens.InfoRepScreen(navController = navController)
+            InfoRepScreen(navController = navController)
         }
         composable(route = Screens.Wait.route) {
-            com.example.signup.presentation.screens.WaitForAdminScreen(navController = navController)
+            WaitForAdminScreen(navController = navController)
         }
 
 
@@ -80,11 +82,9 @@ fun Navigation(
             )
         }
         composable(route = Screens.CartBuyer.route) {
-            com.example.buyer.presentation.screens.CartScreen(
+            CartScreen(
                 navController = navController,
-                userId = "",
-                paymentLauncher = paymentLauncher
-            )
+                userId = "")
         }
         composable(
             route = Screens.ProductBuyer.route,
@@ -94,14 +94,13 @@ fun Navigation(
             com.example.buyer.presentation.screens.BuyerProductScreen(
                 navController = navController,
                 args = index,
-                paymentLauncher = paymentLauncher,
-                userId = userId
+                userId = ""
             )
         }
 
 
         composable(route = Screens.HomeSeller.route) {
-            SellerHomeScreen(mainNavController = navController,userId = userId)
+            SellerHomeScreen(mainNavController = navController,userId = "")
         }
         composable(
             route = Screens.ProductSeller.route,
@@ -112,7 +111,7 @@ fun Navigation(
                 navController = navController,
                 cn = cn,
                 args = item,
-                userId = userId
+                userId = ""
             )
         }
 

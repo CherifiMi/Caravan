@@ -35,13 +35,10 @@ lateinit var gAppState: com.example.common.CaravanAppState
 fun MainApp(
     viewModel: MainViewModel,
     cn: ContentResolver,
-    args: Bundle?
 ) {
     lateinit var navController: NavHostController
     val appState = rememberAppState()
     gAppState = appState
-
-    var userId = args?.getString("userId") ?: "x"
 
 
     Scaffold(
