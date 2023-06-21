@@ -35,7 +35,6 @@ lateinit var gAppState: com.example.common.CaravanAppState
 fun MainApp(
     viewModel: MainViewModel,
     cn: ContentResolver,
-    paymentLauncher: PaymentLauncher,
     args: Bundle?
 ) {
     lateinit var navController: NavHostController
@@ -44,11 +43,6 @@ fun MainApp(
 
     var userId = args?.getString("userId") ?: "x"
 
-    if(userId.isNullOrEmpty()||userId=="x") {
-        userId = viewModel.fireId
-    }
-
-    viewModel.onSplashScreen(userId)
 
     Scaffold(
         snackbarHost = {
@@ -63,7 +57,7 @@ fun MainApp(
         scaffoldState = appState.scaffoldState
     ){
         navController = rememberNavController()
-        Navigation(navController, viewModel, cn, paymentLauncher, userId)
+        Navigation(navController, viewModel, cn)
     }
 }
 

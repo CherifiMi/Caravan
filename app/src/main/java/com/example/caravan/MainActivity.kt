@@ -29,10 +29,13 @@ import com.example.caravan.domain.ConnectivityObserver
 import com.example.caravan.domain.NetworkConnectivityObserver
 import com.example.common.theme.CaravanTheme
 import com.example.buyer.ui.BuyerViewModel
+import com.example.common.domain.ConnectivityObserver
+import com.example.common.domain.NetworkConnectivityObserver
 import com.stripe.android.PaymentConfiguration
 import com.stripe.android.payments.paymentlauncher.PaymentLauncher
 import com.stripe.android.payments.paymentlauncher.PaymentResult
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.delay
 
 val canOrder = mutableStateOf(false)
 
@@ -40,8 +43,6 @@ val canOrder = mutableStateOf(false)
 class MainActivity: ComponentActivity() {
 
     private val viewModel: MainViewModel by viewModels()
-    lateinit var buyerViewModel: com.example.buyer.ui.BuyerViewModel
-    lateinit var connectivityObserver: ConnectivityObserver
 
     @RequiresApi(Build.VERSION_CODES.O)
     @ExperimentalMotionApi
@@ -50,11 +51,6 @@ class MainActivity: ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        connectivityObserver = NetworkConnectivityObserver(applicationContext)
-
-        configAWS()
-
-        configStripe()
 
         installSplashScreen().apply {
             setKeepOnScreenCondition {
@@ -62,67 +58,19 @@ class MainActivity: ComponentActivity() {
             }
         }
 
-        val paymentConfiguration = PaymentConfiguration.getInstance(applicationContext)
-
-        val paymentLauncher = PaymentLauncher.Companion.create(
-            this,
-            paymentConfiguration.publishableKey,
-            paymentConfiguration.stripeAccountId,
-            ::onPaymentResult
-        )
         setContent {
-
-            val netStatus by connectivityObserver.observe().collectAsState(initial = ConnectivityObserver.Status.Unavailable)
-            viewModel.there_is_net.value = netStatus == ConnectivityObserver.Status.Available
-
-            Log.d("MitoNet", netStatus.name)
-            buyerViewModel = hiltViewModel()
-            com.example.common.theme.CaravanTheme {
+            CaravanTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    MainApp(viewModel, contentResolver, paymentLauncher, args = null)
+                    MainApp(viewModel, contentResolver, args = null)
                 }
             }
         }
     }
 
-    private fun configStripe() {
-        PaymentConfiguration.init(
-            applicationContext,
-            "pk_test_51LWUO5SACQklfQRYruy9W29tWhUQ1gjBpke7xQEH6uoZ7Q1CcGlSzQyPBl6u9aMY4yWqlQJLXgMCbVCgszADY9VV00o6ORtDAr"
-        )
-    }
 
-    private fun configAWS() {
-        try {
-            Amplify.addPlugin(AWSCognitoAuthPlugin())
-            Amplify.addPlugin(AWSS3StoragePlugin())
-            Amplify.configure(applicationContext)
 
-            Log.i("MyAmplifyApp", "Initialized Amplify")
-        } catch (error: AmplifyException) {
-            Log.e("MyAmplifyApp", "Could not initialize Amplify", error)
-        }
-    }
-
-    private fun onPaymentResult(paymentResult: PaymentResult) {
-
-        //buyerViewModel.makeOrder()
-        
-        when (paymentResult) {
-            is PaymentResult.Completed -> {
-                buyerViewModel.makeOrder()
-            }
-            is PaymentResult.Canceled -> {
-                com.example.common.snackbar.SnackbarManager.showMessage(R.string.no_pay)
-            }
-            is PaymentResult.Failed -> {
-                "Failed: " + paymentResult.throwable.message
-                com.example.common.snackbar.SnackbarManager.showMessage(R.string.no_pay)
-            }
-        }
-    }
 }
 
