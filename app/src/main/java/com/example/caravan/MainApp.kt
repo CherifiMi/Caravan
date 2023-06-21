@@ -20,9 +20,7 @@ import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ExperimentalMotionApi
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
-import com.example.common.CaravanAppState
-import com.example.common.snackbar.SnackbarManager
-import com.example.caravan.domain.navigation.Navigation
+import com.example.caravan.navigation.Navigation
 import com.stripe.android.payments.paymentlauncher.PaymentLauncher
 import kotlinx.coroutines.CoroutineScope
 

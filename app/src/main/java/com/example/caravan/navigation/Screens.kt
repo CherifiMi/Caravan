@@ -1,4 +1,4 @@
-package com.example.common.domain.navigation
+package com.example.caravan.navigation
 
 
 sealed class Screens(val route: String) {
