@@ -1,7 +1,7 @@
 package com.example.common.ext
 
 import android.util.Patterns
-import com.example.caravan.R
+import com.example.common.R
 import com.example.common.snackbar.SnackbarManager
 import kotlinx.coroutines.CoroutineExceptionHandler
 import java.util.regex.Pattern
