@@ -21,8 +21,6 @@ class MainViewModel @Inject constructor() : ViewModel() {
     private val _spalsh = MutableStateFlow(true)
     val spalsh = _spalsh.asStateFlow()
 
-    var firstScreen = ""
-
-
+    var firstScreen = "login"
 }
 

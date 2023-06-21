@@ -1,6 +1,6 @@
 package com.example.common.data.remote
 
-import com.example.caravan.domain.model.*
+import com.example.common.domain.model.*
 import okhttp3.RequestBody
 import okhttp3.ResponseBody
 import retrofit2.Response

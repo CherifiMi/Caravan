@@ -40,7 +40,6 @@ fun MainApp(
     val appState = rememberAppState()
     gAppState = appState
 
-
     Scaffold(
         snackbarHost = {
             SnackbarHost(
