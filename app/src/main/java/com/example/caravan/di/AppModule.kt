@@ -1,12 +1,12 @@
-package com.example.common.di
+package com.example.caravan.di
 
 import android.app.Application
 import androidx.room.Room
-import com.example.caravan.data.local.CaravanDB
-import com.example.caravan.data.remote.CaravanApi
-import com.example.caravan.data.repository.AccountService
-import com.example.caravan.data.repository.CaravanRepository
-import com.example.caravan.data.util.Constants.Companion.BASE_URL
+import com.example.common.data.local.CaravanDB
+import com.example.common.data.remote.CaravanApi
+import com.example.common.data.repository.AccountService
+import com.example.common.data.repository.CaravanRepository
+import com.example.common.data.util.Constants.Companion.BASE_URL
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -31,7 +31,7 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideCaravanDatabase(app: Application): CaravanDB{
+    fun provideCaravanDatabase(app: Application): CaravanDB {
         return Room.databaseBuilder(
             app,
             CaravanDB::class.java,
