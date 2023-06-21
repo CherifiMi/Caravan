@@ -2,7 +2,7 @@ package com.example.common.data.local
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import com.example.caravan.domain.model.*
+import com.example.common.domain.model.*
 
 @Database(
     entities = [

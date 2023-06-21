@@ -1,7 +1,7 @@
 package com.example.common.data.local
 
 import androidx.room.*
-import com.example.caravan.domain.model.*
+import com.example.common.domain.model.*
 import kotlinx.coroutines.flow.Flow
 
 @Dao
